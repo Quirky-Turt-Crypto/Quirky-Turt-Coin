@@ -1,9 +1,9 @@
-// Copyright (c) 2017-2020 The PIVX developers
+// Copyright (c) 2017-2020 The quirkturt developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_STAKEINPUT_H
-#define PIVX_STAKEINPUT_H
+#ifndef quirkturt_STAKEINPUT_H
+#define quirkturt_STAKEINPUT_H
 
 #include "chain.h"
 #include "streams.h"
@@ -25,7 +25,7 @@ public:
     virtual const CBlockIndex* GetIndexFrom() const = 0;
     virtual bool GetTxOutFrom(CTxOut& out) const = 0;
     virtual CAmount GetValue() const = 0;
-    virtual bool IsZPIV() const = 0;
+    virtual bool IsZQRTC() const = 0;
     virtual CDataStream GetUniqueness() const = 0;
     virtual bool ContextCheck(int nHeight, uint32_t nTime) = 0;
 };
@@ -50,9 +50,9 @@ public:
     CDataStream GetUniqueness() const override;
     CTxIn GetTxIn() const;
     bool CreateTxOuts(const CWallet* pwallet, std::vector<CTxOut>& vout, CAmount nTotal) const;
-    bool IsZPIV() const override { return false; }
+    bool IsZQRTC() const override { return false; }
     bool ContextCheck(int nHeight, uint32_t nTime) override;
 };
 
 
-#endif //PIVX_STAKEINPUT_H
+#endif //quirkturt_STAKEINPUT_H

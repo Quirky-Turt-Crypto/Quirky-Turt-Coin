@@ -6,10 +6,10 @@
 
 import os
 
-from test_framework.test_framework import PivxTestFramework
+from test_framework.test_framework import quirkturtTestFramework
 from test_framework.util import get_datadir_path
 
-class ConfArgsTest(PivxTestFramework):
+class ConfArgsTest(quirkturtTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1
@@ -28,7 +28,7 @@ class ConfArgsTest(PivxTestFramework):
         self.assert_start_raises_init_error(0, ['-datadir='+new_data_dir], 'Error: Specified data directory "' + new_data_dir + '" does not exist.')
 
         # Check that using non-existent datadir in conf file fails
-        conf_file = os.path.join(default_data_dir, "pivx.conf")
+        conf_file = os.path.join(default_data_dir, "quirkturt.conf")
 
         # datadir needs to be set before [regtest] section
         conf_file_contents = open(conf_file, encoding='utf8').read()
@@ -36,12 +36,12 @@ class ConfArgsTest(PivxTestFramework):
             f.write("datadir=" + new_data_dir + "\n")
             f.write(conf_file_contents)
 
-        # Temporarily disabled, because this test would access the user's home dir (~/.pivx)
+        # Temporarily disabled, because this test would access the user's home dir (~/.quirkturt)
         #self.assert_start_raises_init_error(0, ['-conf=' + conf_file], 'Error reading configuration file: specified data directory "' + new_data_dir + '" does not exist.')
 
         # Create the directory and ensure the config file now works
         os.mkdir(new_data_dir)
-        # Temporarily disabled, because this test would access the user's home dir (~/.pivx)
+        # Temporarily disabled, because this test would access the user's home dir (~/.quirkturt)
         #self.start_node(0, ['-conf='+conf_file, '-wallet=w1'])
         #self.stop_node(0)
         #assert os.path.isfile(os.path.join(new_data_dir, 'regtest', 'wallets', 'w1'))

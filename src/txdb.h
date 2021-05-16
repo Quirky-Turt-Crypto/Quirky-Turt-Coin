@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2016-2020 The PIVX developers
+// Copyright (c) 2016-2020 The quirkturt developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -156,7 +156,7 @@ private:
     void operator=(const CZerocoinDB&);
 
 public:
-    /** Write zPIV spends to the zerocoinDB in a batch */
+    /** Write zQRTC spends to the zerocoinDB in a batch */
     bool WriteCoinSpendBatch(const std::vector<std::pair<libzerocoin::CoinSpend, uint256> >& spendInfo);
     bool ReadCoinSpend(const CBigNum& bnSerial, uint256& txHash);
     bool ReadCoinSpend(const uint256& hashSerial, uint256 &txHash);

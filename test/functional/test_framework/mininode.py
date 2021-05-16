@@ -89,7 +89,7 @@ class P2PConnection(asyncore.dispatcher):
         self.network = net
         self.disconnect = False
 
-        logger.debug('Connecting to PIVX Node: %s:%d' % (self.dstaddr, self.dstport))
+        logger.debug('Connecting to quirkturt Node: %s:%d' % (self.dstaddr, self.dstport))
 
         try:
             self.connect((dstaddr, dstport))

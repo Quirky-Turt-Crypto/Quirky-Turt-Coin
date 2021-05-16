@@ -1,12 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2019 The PIVX developers
+// Copyright (c) 2015-2019 The quirkturt developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_HASH_H
-#define PIVX_HASH_H
+#ifndef quirkturt_HASH_H
+#define quirkturt_HASH_H
 
 #include "arith_uint256.h"
 #include "crypto/ripemd160.h"
@@ -505,5 +505,5 @@ public:
 uint64_t SipHashUint256(uint64_t k0, uint64_t k1, const uint256& val);
 uint64_t SipHashUint256Extra(uint64_t k0, uint64_t k1, const uint256& val, uint32_t extra);
 
-#endif // PIVX_HASH_H
+#endif // quirkturt_HASH_H
 
