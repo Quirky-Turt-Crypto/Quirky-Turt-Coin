@@ -1,5 +1,5 @@
 // Copyright (c) 2016-2020 The ZCash developers
-// Copyright (c) 2020 The PIVX developers
+// Copyright (c) 2020 The quirkturt developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
@@ -1058,7 +1058,7 @@ BOOST_AUTO_TEST_CASE(MarkAffectedSaplingTransactionsDirty) {
     auto scriptPubKey = GetScriptForDestination(tsk.GetPubKey().GetID());
 
     // Generate shielding tx from transparent to Sapling
-    // 0.5 t-PIV in, 0.4 z-PIV out, 0.1 t-PIV fee
+    // 0.5 t-QRTC in, 0.4 z-QRTC out, 0.1 t-QRTC fee
     auto builder = TransactionBuilder(consensusParams, 1, &keystore);
     builder.AddTransparentInput(COutPoint(), scriptPubKey, 50000000);
     builder.AddSaplingOutput(extfvk.fvk.ovk, pk, 40000000, {});
@@ -1113,7 +1113,7 @@ BOOST_AUTO_TEST_CASE(MarkAffectedSaplingTransactionsDirty) {
     auto witness = saplingTree.witness();
 
     // Create a Sapling-only transaction
-    // 0.4 z-PIV in, 0.25 z-PIV out, 0.1 t-PIV fee, 0.05 z-PIV change
+    // 0.4 z-QRTC in, 0.25 z-QRTC out, 0.1 t-QRTC fee, 0.05 z-QRTC change
     auto builder2 = TransactionBuilder(consensusParams, 2);
     builder2.AddSaplingSpend(expsk, note, anchor, witness);
     builder2.AddSaplingOutput(extfvk.fvk.ovk, pk, 25000000, {});
@@ -1172,7 +1172,7 @@ BOOST_AUTO_TEST_CASE(GetNotes)
         CKey tsk = AddTestCKeyToKeyStore(keystore);
         auto scriptPubKey = GetScriptForDestination(tsk.GetPubKey().GetID());
 
-        // Generate shielding tx from transparent to Sapling (five 1 PIV notes)
+        // Generate shielding tx from transparent to Sapling (five 1 QRTC notes)
         auto builder = TransactionBuilder(consensusParams, 1, &keystore);
         builder.AddTransparentInput(COutPoint(), scriptPubKey, 510000000);
         for (int i=0; i<5; i++) builder.AddSaplingOutput(extfvk.fvk.ovk, pk, 100000000, {});

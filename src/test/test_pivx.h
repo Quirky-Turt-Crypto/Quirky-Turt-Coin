@@ -1,9 +1,9 @@
-// Copyright (c) 2015-2019 The PIVX developers
+// Copyright (c) 2015-2019 The quirkturt developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef PIVX_TEST_TEST_PIVX_H
-#define PIVX_TEST_TEST_PIVX_H
+#ifndef quirkturt_TEST_TEST_quirkturt_H
+#define quirkturt_TEST_TEST_quirkturt_H
 
 #include "fs.h"
 #include "scheduler.h"

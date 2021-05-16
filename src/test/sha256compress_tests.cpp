@@ -1,4 +1,4 @@
-#include "test/test_pivx.h"
+#include "test/test_quirkturt.h"
 #include "crypto/sha256.h"
 #include "uint256.h"
 

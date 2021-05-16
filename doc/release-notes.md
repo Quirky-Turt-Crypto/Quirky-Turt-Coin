@@ -1,42 +1,42 @@
 (note: this is a temporary file, to be added-to by anybody, and moved to release-notes at release time)
 
-PIVX Core version *version* is now available from:  <https://github.com/pivx-project/pivx/releases>
+quirkturt Core version *version* is now available from:  <https://github.com/quirkturt-project/quirkturt/releases>
 
 This is a new major version release, including various bug fixes and performance improvements, as well as updated translations.
 
-Please report bugs using the issue tracker at github: <https://github.com/pivx-project/pivx/issues>
+Please report bugs using the issue tracker at github: <https://github.com/quirkturt-project/quirkturt/issues>
 
 
 How to Upgrade
 ==============
 
-If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/PIVX-Qt (on Mac) or pivxd/pivx-qt (on Linux).
+If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/quirkturt-Qt (on Mac) or quirkturtd/quirkturt-qt (on Linux).
 
 Sapling Parameters
 ==================
 
-In order to run, PIVX Core now requires two files, `sapling-output.params` and `sapling-spend.params` (with total size ~50 MB), to be saved in a specific location.
+In order to run, quirkturt Core now requires two files, `sapling-output.params` and `sapling-spend.params` (with total size ~50 MB), to be saved in a specific location.
 
 For the following packages, no action is required by the user:
 - macOS release `dmg` binaries will use the params that are bundled into the .app bundle.
 - Windows installer `.exe` will automatically copy the files in the proper location.
 - Linux `PPA/Snap` installs will automatically copy the files in the proper location.
 
-For the other packages, the user must save the param files in the proper location, before being able to run PIVX v5.0.0:
+For the other packages, the user must save the param files in the proper location, before being able to run quirkturt v5.0.0:
 - macOS/Linux `tar.gz` tarballs include a bash script (`install-params.sh`) to copy the parameters in the appropriate location.
-- Windows `.zip` users need to manually copy the files from the `share/pivx` folder to the `%APPDATA%\PIVXParams` directory.
+- Windows `.zip` users need to manually copy the files from the `share/quirkturt` folder to the `%APPDATA%\quirkturtParams` directory.
 - self compilers can run the script from the repository sources (`params/install-params.sh`), or copy the files directly from the `params` subdirectory.
 
 Compatibility
 ==============
 
-PIVX Core is extensively tested on multiple operating systems using the Linux kernel, macOS 10.10+, and Windows 7 and later.
+quirkturt Core is extensively tested on multiple operating systems using the Linux kernel, macOS 10.10+, and Windows 7 and later.
 
 Microsoft ended support for Windows XP on [April 8th, 2014](https://www.microsoft.com/en-us/WindowsForBusiness/end-of-xp-support), No attempt is made to prevent installing or running the software on Windows XP, you can still do so at your own risk but be aware that there are known instabilities and issues. Please do not report issues about Windows XP to the issue tracker.
 
-Apple released it's last Mountain Lion update August 13, 2015, and officially ended support on [December 14, 2015](http://news.fnal.gov/2015/10/mac-os-x-mountain-lion-10-8-end-of-life-december-14/). PIVX Core software starting with v3.2.0 will no longer run on MacOS versions prior to Yosemite (10.10). Please do not report issues about MacOS versions prior to Yosemite to the issue tracker.
+Apple released it's last Mountain Lion update August 13, 2015, and officially ended support on [December 14, 2015](http://news.fnal.gov/2015/10/mac-os-x-mountain-lion-10-8-end-of-life-december-14/). quirkturt Core software starting with v3.2.0 will no longer run on MacOS versions prior to Yosemite (10.10). Please do not report issues about MacOS versions prior to Yosemite to the issue tracker.
 
-PIVX Core should also work on most other Unix-like systems but is not frequently tested on them.
+quirkturt Core should also work on most other Unix-like systems but is not frequently tested on them.
 
 
 Notable Changes
@@ -46,12 +46,12 @@ Notable Changes
 
 Cold-Staking Re-Activation
 --------------------------
-PIVX Core v6.0.0 includes a fix for the vulnerability identified within the cold-staking protocol (see PR [#2258](https://github.com/PIVX-Project/PIVX/pull/2258)).
+quirkturt Core v6.0.0 includes a fix for the vulnerability identified within the cold-staking protocol (see PR [#2258](https://github.com/quirkturt-Project/quirkturt/pull/2258)).
 Therefore the feature will be re-enabled on the network, via `SPORK_19`, shortly after the upgrade enforcement.
 
 #### Protocol changes
 
-A new opcode (`0xd2`) is introduced (see PR [#2275](https://github.com/PIVX-Project/PIVX/pull/2275)). It enforces the same rules as the legacy cold-staking opcode, but without allowing a "free" script for the last output of the transaction.
+A new opcode (`0xd2`) is introduced (see PR [#2275](https://github.com/quirkturt-Project/quirkturt/pull/2275)). It enforces the same rules as the legacy cold-staking opcode, but without allowing a "free" script for the last output of the transaction.
 This is in accord with the consensus change introduced with the "Deterministic Masternodes" update, as masternode/budget payments are now outputs of the *coinbase* transaction (rather than the *coinstake*), therefore a "free" output for the coinstake is no longer needed.
 The new opcode takes the name of `OP_CHECKCOLDSTAKEVERIFY`, and the legacy opcode (`0xd1`) is renamed to `OP_CHECKCOLDSTAKEVERIFY_LOF` (last-output-free).
 Scripts with the old opcode are still accepted on the network (the restriction on the last-output is enforced after the script validation in this case), but the client creates new delegations with the new opcode, by default, after the upgrade enforcement.
@@ -62,7 +62,7 @@ GUI changes
 
 ### RPC-Console
 
-The GUI RPC-Console now accepts "parenthesized syntax", nested commands, and simple queries (see [PR #2282](https://github.com/PIVX-Project/PIVX/pull/2282).
+The GUI RPC-Console now accepts "parenthesized syntax", nested commands, and simple queries (see [PR #2282](https://github.com/quirkturt-Project/quirkturt/pull/2282).
 A new command `help-console` (available only on the GUI console) documents how to use it:
 
 ```
@@ -103,7 +103,7 @@ The `autocombine` RPC command has been replaced with specific set/get commands (
     ```  
     setautocombinethreshold enable ( value )
     This will set the auto-combine threshold value.
-    Wallet will automatically monitor for any coins with value below the threshold amount, and combine them if they reside with the same PIVX address
+    Wallet will automatically monitor for any coins with value below the threshold amount, and combine them if they reside with the same quirkturt address
     When auto-combine runs it will create a transaction, and therefore will be subject to transaction fees.
     
     Arguments:
@@ -113,7 +113,7 @@ The `autocombine` RPC command has been replaced with specific set/get commands (
     Result:
     {
       "enabled": true|false,     (boolean) true if auto-combine is enabled, otherwise false
-      "threshold": n.nnn,        (numeric) auto-combine threshold in PIV
+      "threshold": n.nnn,        (numeric) auto-combine threshold in QRTC
       "saved": true|false        (boolean) true if setting was saved to the database, otherwise false
     }
     ```
@@ -126,7 +126,7 @@ The `autocombine` RPC command has been replaced with specific set/get commands (
     Result:
     {
       "enabled": true|false,    (boolean) true if auto-combine is enabled, otherwise false
-      "threshold": n.nnn         (numeric) the auto-combine threshold amount in PIV
+      "threshold": n.nnn         (numeric) the auto-combine threshold amount in QRTC
     }
     ```
 
@@ -137,7 +137,7 @@ The minimum supported miniUPnPc API version is set to 10. This keeps compatibili
 
 #### Build System
 
-OpenSSL is no longer used by PIVX Core
+OpenSSL is no longer used by quirkturt Core
 
 
 #### Disable PoW mining RPC Commands
@@ -153,8 +153,8 @@ Configuration sections for testnet and regtest
 
 It is now possible for a single configuration file to set different options for different networks. This is done by using sections or by prefixing the option with the network, such as:
 
-    main.uacomment=pivx
-    test.uacomment=pivx-testnet
+    main.uacomment=quirkturt
+    test.uacomment=quirkturt-testnet
     regtest.uacomment=regtest
     [main]
     mempoolsize=300
@@ -205,4 +205,4 @@ Detailed release notes follow. This overview includes changes that affect behavi
 Thanks to everyone who directly contributed to this release:
 
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/pivx-project-translations/), the QA team during Testing and the Node hosts supporting our Testnet.
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/quirkturt-project-translations/), the QA team during Testing and the Node hosts supporting our Testnet.

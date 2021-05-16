@@ -1,11 +1,11 @@
 Sample configuration files for:
 ```
-SystemD: pivxd.service
-Upstart: pivxd.conf
-OpenRC:  pivxd.openrc
-         pivxd.openrcconf
-CentOS:  pivxd.init
-macOS:    org.pivx.pivxd.plist
+SystemD: quirkturtd.service
+Upstart: quirkturtd.conf
+OpenRC:  quirkturtd.openrc
+         quirkturtd.openrcconf
+CentOS:  quirkturtd.init
+macOS:    org.quirkturt.quirkturtd.plist
 ```
 have been made available to assist packagers in creating node packages here.
 
