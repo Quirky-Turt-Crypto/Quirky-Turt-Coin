@@ -2,6 +2,7 @@
 // Copyright (c) 2009-2015 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2020 The PIVX developers
+// Copyright (c) 2021 The QuirTurt developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,6 +12,13 @@
 #include "consensus/merkle.h"
 #include "tinyformat.h"
 #include "utilstrencodings.h"
+
+#include "amount.h"
+#include "base58.h"
+#include "random.h"
+#include "util.h"
+#include "uint256.h"
+
 
 #include <assert.h>
 
@@ -63,12 +71,15 @@ static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits
  * Main network
  */
 /**
+
  * What makes a good checkpoint block?
  * + Is surrounded by blocks with reasonable timestamps
  *   (no blocks before with a timestamp after, none after with
  *    timestamp before)
  * + Contains no strange transactions
  */
+static bool regenerate = true;
+
 static Checkpoints::MapCheckpoints mapCheckpoints = {
     { 259201, uint256S("1c9121bf9329a6234bfd1ea2d91515f19cd96990725265253f4b164283ade5dd")},
     { 424998, uint256S("f31e381eedb0ed3ed65fcc98cc71f36012bee32e8efd017c4f9fb0620fd35f6b")},
@@ -130,8 +141,38 @@ public:
 
         genesis = CreateGenesisBlock(1454124731, 2402015, 0x1e0ffff0, 1, 250 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
+
+	if (regenerate) {
+            hashGenesisBlock = uint256S("");
+            genesis.nNonce = 0;
+            if (true && (genesis.GetHash() != hashGenesisBlock)) {
+                uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
+                while (genesis.GetHash() > hashTarget)
+                {
+                    ++genesis.nNonce;
+                    if (genesis.nNonce == 0)
+                    {
+                        ++genesis.nTime;
+                    }
+                }
+                std::cout << "// Mainnet ---";
+                std::cout << " nonce: " << genesis.nNonce;
+                std::cout << " time: " << genesis.nTime;
+                std::cout << " hash: 0x" << genesis.GetHash().ToString().c_str();
+                std::cout << " merklehash: 0x"  << genesis.hashMerkleRoot.ToString().c_str() <<  "\n";
+
+
+
+            }
+        } else {
+            LogPrintf("Mainnet ---\n");
+            LogPrintf(" nonce: %u\n", genesis.nNonce);
+            LogPrintf(" time: %u\n", genesis.nTime);
+            LogPrintf(" hash: 0x%s\n", genesis.GetHash().ToString().c_str());
+            LogPrintf(" merklehash: 0x%s\n", genesis.hashMerkleRoot.ToString().c_str());
         assert(consensus.hashGenesisBlock == uint256S("0x0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818"));
         assert(genesis.hashMerkleRoot == uint256S("0x1b2ef6e2f28be914103a277377ae7729dcd125dfeb8bf97bd5964ba72b6dc39b"));
+        }
 
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.powLimit   = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -271,8 +312,37 @@ public:
 
         genesis = CreateGenesisBlock(1454124731, 2402015, 0x1e0ffff0, 1, 250 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
+
+	if (regenerate) {
+            hashGenesisBlock = uint256S("");
+            genesis.nNonce = 0;
+            if (true && (genesis.GetHash() != hashGenesisBlock)) {
+                uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
+                while (genesis.GetHash() > hashTarget)
+                {
+                    ++genesis.nNonce;
+                    if (genesis.nNonce == 0)
+                    {
+                        ++genesis.nTime;
+                    }
+                }
+                std::cout << "// Testnet ---";
+                std::cout << " nonce: " << genesis.nNonce;
+                std::cout << " time: " << genesis.nTime;
+                std::cout << " hash: 0x" << genesis.GetHash().ToString().c_str();
+                std::cout << " merklehash: 0x"  << genesis.hashMerkleRoot.ToString().c_str() <<  "\n";
+
+            }
+        } else {
+            LogPrintf("Testnet ---\n");
+            LogPrintf(" nonce: %u\n", genesis.nNonce);
+            LogPrintf(" time: %u\n", genesis.nTime);
+            LogPrintf(" hash: 0x%s\n", genesis.GetHash().ToString().c_str());
+            LogPrintf(" merklehash: 0x%s\n", genesis.hashMerkleRoot.ToString().c_str());
+
         assert(consensus.hashGenesisBlock == uint256S("0x0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818"));
         assert(genesis.hashMerkleRoot == uint256S("0x1b2ef6e2f28be914103a277377ae7729dcd125dfeb8bf97bd5964ba72b6dc39b"));
+        }
 
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.powLimit   = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
@@ -395,8 +465,38 @@ public:
 
         genesis = CreateGenesisBlock(1454124731, 2402015, 0x1e0ffff0, 1, 250 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
+
+	if (regenerate) {
+            hashGenesisBlock = uint256S("");
+            if (true && (genesis.GetHash() != hashGenesisBlock)) {
+                uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
+                while (genesis.GetHash() > hashTarget)
+                {
+                    ++genesis.nNonce;
+                    if (genesis.nNonce == 0)
+                    {
+                        ++genesis.nTime;
+                    }
+                }
+                std::cout << "// Regtestnet ---";
+                std::cout << " nonce: " << genesis.nNonce;
+                std::cout << " time: " << genesis.nTime;
+                std::cout << " hash: 0x" << genesis.GetHash().ToString().c_str();
+                std::cout << " merklehash: 0x"  << genesis.hashMerkleRoot.ToString().c_str() <<  "\n";
+
+            }
+        } else {
+            LogPrintf("Regtestnet ---\n");
+            LogPrintf(" nonce: %u\n", genesis.nNonce);
+            LogPrintf(" time: %u\n", genesis.nTime);
+            LogPrintf(" hash: 0x%s\n", genesis.GetHash().ToString().c_str());
+            LogPrintf(" merklehash: 0x%s\n", genesis.hashMerkleRoot.ToString().c_str());
         assert(consensus.hashGenesisBlock == uint256S("0x0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818"));
         assert(genesis.hashMerkleRoot == uint256S("0x1b2ef6e2f28be914103a277377ae7729dcd125dfeb8bf97bd5964ba72b6dc39b"));
+        }
+
+        if (regenerate)
+            exit(0);
 
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.powLimit   = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
