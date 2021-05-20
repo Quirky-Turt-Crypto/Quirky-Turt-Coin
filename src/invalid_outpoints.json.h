@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_INVALID_OUTPOINTS_JSON_H
-#define quirkturt_INVALID_OUTPOINTS_JSON_H
+#ifndef quirkyturt_INVALID_OUTPOINTS_JSON_H
+#define quirkyturt_INVALID_OUTPOINTS_JSON_H
 #include <string>
 
 std::string LoadInvalidOutPoints()
@@ -157,4 +157,4 @@ std::string LoadInvalidOutPoints()
     return str;
 }
 
-#endif //quirkturt_INVALID_OUTPOINTS_JSON_H
+#endif //quirkyturt_INVALID_OUTPOINTS_JSON_H

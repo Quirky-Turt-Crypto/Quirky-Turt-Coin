@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_ADDRESSBOOK_H
-#define quirkturt_ADDRESSBOOK_H
+#ifndef quirkyturt_ADDRESSBOOK_H
+#define quirkyturt_ADDRESSBOOK_H
 
 #include <map>
 #include <string>
@@ -48,4 +48,4 @@ namespace AddressBook {
 
 }
 
-#endif //quirkturt_ADDRESSBOOK_H
+#endif //quirkyturt_ADDRESSBOOK_H

@@ -3,10 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>org.quirkturt.quirkturtd</string>
+	<string>org.quirkyturt.quirkyturtd</string>
 	<key>ProgramArguments</key>
 	<array>
-		<string>/usr/local/bin/quirkturtd</string>
+		<string>/usr/local/bin/quirkyturtd</string>
 	</array>
 	<key>RunAtLoad</key>
 	<true/>

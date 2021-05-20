@@ -13,29 +13,29 @@
 %endif
 %endif
 
-Name:		quirkturt
+Name:		quirkyturt
 Version:	0.12.0
 Release:	2%{?dist}
 Summary:	Peer to Peer Cryptographic Currency
 
 Group:		Applications/System
 License:	MIT
-URL:		https://quirkturt.org/
-Source0:	https://quirkturt.org/bin/quirkturt-core-%{version}/quirkturt-%{version}.tar.gz
+URL:		https://quirkyturt.org/
+Source0:	https://quirkyturt.org/bin/quirkyturt-core-%{version}/quirkyturt-%{version}.tar.gz
 Source1:	http://download.oracle.com/berkeley-db/db-%{bdbv}.NC.tar.gz
 
-Source10:	https://raw.githubusercontent.com/quirkturt-project/quirkturt/v%{version}/contrib/debian/examples/quirkturt.conf
+Source10:	https://raw.githubusercontent.com/quirkyturt-project/quirkyturt/v%{version}/contrib/debian/examples/quirkyturt.conf
 
 #man pages
-Source20:	https://raw.githubusercontent.com/quirkturt-project/quirkturt/v%{version}/doc/man/quirkturtd.1
-Source21:	https://raw.githubusercontent.com/quirkturt-project/quirkturt/v%{version}/doc/man/quirkturt-cli.1
-Source22:	https://raw.githubusercontent.com/quirkturt-project/quirkturt/v%{version}/doc/man/quirkturt-qt.1
+Source20:	https://raw.githubusercontent.com/quirkyturt-project/quirkyturt/v%{version}/doc/man/quirkyturtd.1
+Source21:	https://raw.githubusercontent.com/quirkyturt-project/quirkyturt/v%{version}/doc/man/quirkyturt-cli.1
+Source22:	https://raw.githubusercontent.com/quirkyturt-project/quirkyturt/v%{version}/doc/man/quirkyturt-qt.1
 
 #selinux
-Source30:	https://raw.githubusercontent.com/quirkturt-project/quirkturt/v%{version}/contrib/rpm/quirkturt.te
-# Source31 - what about quirkturt-tx and bench_quirkturt ???
-Source31:	https://raw.githubusercontent.com/quirkturt-project/quirkturt/v%{version}/contrib/rpm/quirkturt.fc
-Source32:	https://raw.githubusercontent.com/quirkturt-project/quirkturt/v%{version}/contrib/rpm/quirkturt.if
+Source30:	https://raw.githubusercontent.com/quirkyturt-project/quirkyturt/v%{version}/contrib/rpm/quirkyturt.te
+# Source31 - what about quirkyturt-tx and bench_quirkyturt ???
+Source31:	https://raw.githubusercontent.com/quirkyturt-project/quirkyturt/v%{version}/contrib/rpm/quirkyturt.fc
+Source32:	https://raw.githubusercontent.com/quirkyturt-project/quirkyturt/v%{version}/contrib/rpm/quirkyturt.if
 
 Source100:	https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg
 
@@ -50,13 +50,13 @@ BuildRequires:	autoconf automake libtool
 BuildRequires:	libevent-devel
 
 
-Patch0:		quirkturt-0.12.0-libressl.patch
+Patch0:		quirkyturt-0.12.0-libressl.patch
 
 
 %description
 Bitcoin is a digital cryptographic currency that uses peer-to-peer technology to
 operate with no central authority or banks; managing transactions and the
-issuing of quirkturts is carried out collectively by the network.
+issuing of quirkyturts is carried out collectively by the network.
 
 %if %{_buildqt}
 %package core
@@ -81,7 +81,7 @@ BuildRequires:	%{_bindir}/convert
 %description core
 Bitcoin is a digital cryptographic currency that uses peer-to-peer technology to
 operate with no central authority or banks; managing transactions and the
-issuing of quirkturts is carried out collectively by the network.
+issuing of quirkyturts is carried out collectively by the network.
 
 This package contains the Qt based graphical client and node. If you are looking
 to run a Bitcoin wallet, this is probably the package you want.
@@ -93,28 +93,28 @@ Summary:	Bitcoin shared libraries
 Group:		System Environment/Libraries
 
 %description libs
-This package provides the quirkturtconsensus shared libraries. These libraries
+This package provides the quirkyturtconsensus shared libraries. These libraries
 may be used by third party software to provide consensus verification
 functionality.
 
 Unless you know need this package, you probably do not.
 
 %package devel
-Summary:	Development files for quirkturt
+Summary:	Development files for quirkyturt
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
 %description devel
 This package contains the header files and static library for the
-quirkturtconsensus shared library. If you are developing or compiling software
+quirkyturtconsensus shared library. If you are developing or compiling software
 that wants to link against that library, then you need this package installed.
 
 Most people do not need this package installed.
 
 %package server
-Summary:	The quirkturt daemon
+Summary:	The quirkyturt daemon
 Group:		System Environment/Daemons
-Requires:	quirkturt-utils = %{version}-%{release}
+Requires:	quirkyturt-utils = %{version}-%{release}
 Requires:	selinux-policy policycoreutils-python
 Requires(pre):	shadow-utils
 Requires(post):	%{_sbindir}/semodule %{_sbindir}/restorecon %{_sbindir}/fixfiles %{_sbindir}/sestatus
@@ -124,13 +124,13 @@ BuildRequires:	checkpolicy
 BuildRequires:	%{_datadir}/selinux/devel/Makefile
 
 %description server
-This package provides a stand-alone quirkturt-core daemon. For most users, this
+This package provides a stand-alone quirkyturt-core daemon. For most users, this
 package is only needed if they need a full-node without the graphical client.
 
 Some third party wallet software will want this package to provide the actual
-quirkturt-core node they use to connect to the network.
+quirkyturt-core node they use to connect to the network.
 
-If you use the graphical quirkturt-core client then you almost certainly do not
+If you use the graphical quirkyturt-core client then you almost certainly do not
 need this package.
 
 %package utils
@@ -139,19 +139,19 @@ Group:		Applications/System
 
 %description utils
 This package provides several command line utilities for interacting with a
-quirkturt-core daemon.
+quirkyturt-core daemon.
 
-The quirkturt-cli utility allows you to communicate and control a quirkturt daemon
-over RPC, the quirkturt-tx utility allows you to create a custom transaction, and
-the bench_quirkturt utility can be used to perform some benchmarks.
+The quirkyturt-cli utility allows you to communicate and control a quirkyturt daemon
+over RPC, the quirkyturt-tx utility allows you to create a custom transaction, and
+the bench_quirkyturt utility can be used to perform some benchmarks.
 
-This package contains utilities needed by the quirkturt-server package.
+This package contains utilities needed by the quirkyturt-server package.
 
 
 %prep
 %setup -q
 %patch0 -p1 -b .libressl
-cp -p %{SOURCE10} ./quirkturt.conf.example
+cp -p %{SOURCE10} ./quirkyturt.conf.example
 tar -zxf %{SOURCE1}
 cp -p db-%{bdbv}.NC/LICENSE ./db-%{bdbv}.NC-LICENSE
 mkdir db4 SELinux
@@ -172,7 +172,7 @@ make %{?_smp_mflags}
 pushd SELinux
 for selinuxvariant in %{selinux_variants}; do
 	make NAME=${selinuxvariant} -f %{_datadir}/selinux/devel/Makefile
-	mv quirkturt.pp quirkturt.pp.${selinuxvariant}
+	mv quirkyturt.pp quirkyturt.pp.${selinuxvariant}
 	make NAME=${selinuxvariant} -f %{_datadir}/selinux/devel/Makefile clean
 done
 popd
@@ -182,42 +182,42 @@ popd
 make install DESTDIR=%{buildroot}
 
 mkdir -p -m755 %{buildroot}%{_sbindir}
-mv %{buildroot}%{_bindir}/quirkturtd %{buildroot}%{_sbindir}/quirkturtd
+mv %{buildroot}%{_bindir}/quirkyturtd %{buildroot}%{_sbindir}/quirkyturtd
 
 # systemd stuff
 mkdir -p %{buildroot}%{_tmpfilesdir}
-cat <<EOF > %{buildroot}%{_tmpfilesdir}/quirkturt.conf
-d /run/quirkturtd 0750 quirkturt quirkturt -
+cat <<EOF > %{buildroot}%{_tmpfilesdir}/quirkyturt.conf
+d /run/quirkyturtd 0750 quirkyturt quirkyturt -
 EOF
-touch -a -m -t 201504280000 %{buildroot}%{_tmpfilesdir}/quirkturt.conf
+touch -a -m -t 201504280000 %{buildroot}%{_tmpfilesdir}/quirkyturt.conf
 
 mkdir -p %{buildroot}%{_sysconfdir}/sysconfig
-cat <<EOF > %{buildroot}%{_sysconfdir}/sysconfig/quirkturt
-# Provide options to the quirkturt daemon here, for example
+cat <<EOF > %{buildroot}%{_sysconfdir}/sysconfig/quirkyturt
+# Provide options to the quirkyturt daemon here, for example
 # OPTIONS="-testnet -disable-wallet"
 
 OPTIONS=""
 
 # System service defaults.
 # Don't change these unless you know what you're doing.
-CONFIG_FILE="%{_sysconfdir}/quirkturt/quirkturt.conf"
-DATA_DIR="%{_localstatedir}/lib/quirkturt"
-PID_FILE="/run/quirkturtd/quirkturtd.pid"
+CONFIG_FILE="%{_sysconfdir}/quirkyturt/quirkyturt.conf"
+DATA_DIR="%{_localstatedir}/lib/quirkyturt"
+PID_FILE="/run/quirkyturtd/quirkyturtd.pid"
 EOF
-touch -a -m -t 201504280000 %{buildroot}%{_sysconfdir}/sysconfig/quirkturt
+touch -a -m -t 201504280000 %{buildroot}%{_sysconfdir}/sysconfig/quirkyturt
 
 mkdir -p %{buildroot}%{_unitdir}
-cat <<EOF > %{buildroot}%{_unitdir}/quirkturt.service
+cat <<EOF > %{buildroot}%{_unitdir}/quirkyturt.service
 [Unit]
 Description=Bitcoin daemon
 After=syslog.target network.target
 
 [Service]
 Type=forking
-ExecStart=%{_sbindir}/quirkturtd -daemon -conf=\${CONFIG_FILE} -datadir=\${DATA_DIR} -pid=\${PID_FILE} \$OPTIONS
-EnvironmentFile=%{_sysconfdir}/sysconfig/quirkturt
-User=quirkturt
-Group=quirkturt
+ExecStart=%{_sbindir}/quirkyturtd -daemon -conf=\${CONFIG_FILE} -datadir=\${DATA_DIR} -pid=\${PID_FILE} \$OPTIONS
+EnvironmentFile=%{_sysconfdir}/sysconfig/quirkyturt
+User=quirkyturt
+Group=quirkyturt
 
 Restart=on-failure
 PrivateTmp=true
@@ -229,63 +229,63 @@ StartLimitBurst=5
 [Install]
 WantedBy=multi-user.target
 EOF
-touch -a -m -t 201504280000 %{buildroot}%{_unitdir}/quirkturt.service
+touch -a -m -t 201504280000 %{buildroot}%{_unitdir}/quirkyturt.service
 #end systemd stuff
 
-mkdir %{buildroot}%{_sysconfdir}/quirkturt
-mkdir -p %{buildroot}%{_localstatedir}/lib/quirkturt
+mkdir %{buildroot}%{_sysconfdir}/quirkyturt
+mkdir -p %{buildroot}%{_localstatedir}/lib/quirkyturt
 
 #SELinux
 for selinuxvariant in %{selinux_variants}; do
 	install -d %{buildroot}%{_datadir}/selinux/${selinuxvariant}
-	install -p -m 644 SELinux/quirkturt.pp.${selinuxvariant} %{buildroot}%{_datadir}/selinux/${selinuxvariant}/quirkturt.pp
+	install -p -m 644 SELinux/quirkyturt.pp.${selinuxvariant} %{buildroot}%{_datadir}/selinux/${selinuxvariant}/quirkyturt.pp
 done
 
 %if %{_buildqt}
 # qt icons
-install -D -p share/pixmaps/quirkturt.ico %{buildroot}%{_datadir}/pixmaps/quirkturt.ico
+install -D -p share/pixmaps/quirkyturt.ico %{buildroot}%{_datadir}/pixmaps/quirkyturt.ico
 install -p share/pixmaps/nsis-header.bmp %{buildroot}%{_datadir}/pixmaps/
 install -p share/pixmaps/nsis-wizard.bmp %{buildroot}%{_datadir}/pixmaps/
-install -p %{SOURCE100} %{buildroot}%{_datadir}/pixmaps/quirkturt.svg
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/quirkturt16.png -w16 -h16
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/quirkturt32.png -w32 -h32
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/quirkturt64.png -w64 -h64
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/quirkturt128.png -w128 -h128
-%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/quirkturt256.png -w256 -h256
-%{_bindir}/convert -resize 16x16 %{buildroot}%{_datadir}/pixmaps/quirkturt256.png %{buildroot}%{_datadir}/pixmaps/quirkturt16.xpm
-%{_bindir}/convert -resize 32x32 %{buildroot}%{_datadir}/pixmaps/quirkturt256.png %{buildroot}%{_datadir}/pixmaps/quirkturt32.xpm
-%{_bindir}/convert -resize 64x64 %{buildroot}%{_datadir}/pixmaps/quirkturt256.png %{buildroot}%{_datadir}/pixmaps/quirkturt64.xpm
-%{_bindir}/convert -resize 128x128 %{buildroot}%{_datadir}/pixmaps/quirkturt256.png %{buildroot}%{_datadir}/pixmaps/quirkturt128.xpm
-%{_bindir}/convert %{buildroot}%{_datadir}/pixmaps/quirkturt256.png %{buildroot}%{_datadir}/pixmaps/quirkturt256.xpm
+install -p %{SOURCE100} %{buildroot}%{_datadir}/pixmaps/quirkyturt.svg
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/quirkyturt16.png -w16 -h16
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/quirkyturt32.png -w32 -h32
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/quirkyturt64.png -w64 -h64
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/quirkyturt128.png -w128 -h128
+%{_bindir}/inkscape %{SOURCE100} --export-png=%{buildroot}%{_datadir}/pixmaps/quirkyturt256.png -w256 -h256
+%{_bindir}/convert -resize 16x16 %{buildroot}%{_datadir}/pixmaps/quirkyturt256.png %{buildroot}%{_datadir}/pixmaps/quirkyturt16.xpm
+%{_bindir}/convert -resize 32x32 %{buildroot}%{_datadir}/pixmaps/quirkyturt256.png %{buildroot}%{_datadir}/pixmaps/quirkyturt32.xpm
+%{_bindir}/convert -resize 64x64 %{buildroot}%{_datadir}/pixmaps/quirkyturt256.png %{buildroot}%{_datadir}/pixmaps/quirkyturt64.xpm
+%{_bindir}/convert -resize 128x128 %{buildroot}%{_datadir}/pixmaps/quirkyturt256.png %{buildroot}%{_datadir}/pixmaps/quirkyturt128.xpm
+%{_bindir}/convert %{buildroot}%{_datadir}/pixmaps/quirkyturt256.png %{buildroot}%{_datadir}/pixmaps/quirkyturt256.xpm
 touch %{buildroot}%{_datadir}/pixmaps/*.png -r %{SOURCE100}
 touch %{buildroot}%{_datadir}/pixmaps/*.xpm -r %{SOURCE100}
 
 # Desktop File - change the touch timestamp if modifying
 mkdir -p %{buildroot}%{_datadir}/applications
-cat <<EOF > %{buildroot}%{_datadir}/applications/quirkturt-core.desktop
+cat <<EOF > %{buildroot}%{_datadir}/applications/quirkyturt-core.desktop
 [Desktop Entry]
 Encoding=UTF-8
 Name=Bitcoin
 Comment=Bitcoin P2P Cryptocurrency
 Comment[fr]=Bitcoin, monnaie virtuelle cryptographique pair à pair
 Comment[tr]=Bitcoin, eşten eşe kriptografik sanal para birimi
-Exec=quirkturt-qt %u
+Exec=quirkyturt-qt %u
 Terminal=false
 Type=Application
-Icon=quirkturt128
-MimeType=x-scheme-handler/quirkturt;
+Icon=quirkyturt128
+MimeType=x-scheme-handler/quirkyturt;
 Categories=Office;Finance;
 EOF
 # change touch date when modifying desktop
-touch -a -m -t 201511100546 %{buildroot}%{_datadir}/applications/quirkturt-core.desktop
-%{_bindir}/desktop-file-validate %{buildroot}%{_datadir}/applications/quirkturt-core.desktop
+touch -a -m -t 201511100546 %{buildroot}%{_datadir}/applications/quirkyturt-core.desktop
+%{_bindir}/desktop-file-validate %{buildroot}%{_datadir}/applications/quirkyturt-core.desktop
 
 # KDE protocol - change the touch timestamp if modifying
 mkdir -p %{buildroot}%{_datadir}/kde4/services
-cat <<EOF > %{buildroot}%{_datadir}/kde4/services/quirkturt-core.protocol
+cat <<EOF > %{buildroot}%{_datadir}/kde4/services/quirkyturt-core.protocol
 [Protocol]
-exec=quirkturt-qt '%u'
-protocol=quirkturt
+exec=quirkyturt-qt '%u'
+protocol=quirkyturt
 input=none
 output=none
 helper=true
@@ -296,14 +296,14 @@ makedir=false
 deleting=false
 EOF
 # change touch date when modifying protocol
-touch -a -m -t 201511100546 %{buildroot}%{_datadir}/kde4/services/quirkturt-core.protocol
+touch -a -m -t 201511100546 %{buildroot}%{_datadir}/kde4/services/quirkyturt-core.protocol
 %endif
 
 # man pages
-install -D -p %{SOURCE20} %{buildroot}%{_mandir}/man1/quirkturtd.1
-install -p %{SOURCE21} %{buildroot}%{_mandir}/man1/quirkturt-cli.1
+install -D -p %{SOURCE20} %{buildroot}%{_mandir}/man1/quirkyturtd.1
+install -p %{SOURCE21} %{buildroot}%{_mandir}/man1/quirkyturt-cli.1
 %if %{_buildqt}
-install -p %{SOURCE22} %{buildroot}%{_mandir}/man1/quirkturt-qt.1
+install -p %{SOURCE22} %{buildroot}%{_mandir}/man1/quirkyturt-qt.1
 %endif
 
 # nuke these, we do extensive testing of binaries in %%check before packaging
@@ -311,7 +311,7 @@ rm -f %{buildroot}%{_bindir}/test_*
 
 %check
 make check
-srcdir=src test/quirkturt-util-test.py
+srcdir=src test/quirkyturt-util-test.py
 test/functional/test_runner.py --extended
 
 %post libs -p /sbin/ldconfig
@@ -319,37 +319,37 @@ test/functional/test_runner.py --extended
 %postun libs -p /sbin/ldconfig
 
 %pre server
-getent group quirkturt >/dev/null || groupadd -r quirkturt
-getent passwd quirkturt >/dev/null ||
-	useradd -r -g quirkturt -d /var/lib/quirkturt -s /sbin/nologin \
-	-c "Bitcoin wallet server" quirkturt
+getent group quirkyturt >/dev/null || groupadd -r quirkyturt
+getent passwd quirkyturt >/dev/null ||
+	useradd -r -g quirkyturt -d /var/lib/quirkyturt -s /sbin/nologin \
+	-c "Bitcoin wallet server" quirkyturt
 exit 0
 
 %post server
-%systemd_post quirkturt.service
+%systemd_post quirkyturt.service
 # SELinux
 if [ `%{_sbindir}/sestatus |grep -c "disabled"` -eq 0 ]; then
 for selinuxvariant in %{selinux_variants}; do
-	%{_sbindir}/semodule -s ${selinuxvariant} -i %{_datadir}/selinux/${selinuxvariant}/quirkturt.pp &> /dev/null || :
+	%{_sbindir}/semodule -s ${selinuxvariant} -i %{_datadir}/selinux/${selinuxvariant}/quirkyturt.pp &> /dev/null || :
 done
-%{_sbindir}/semanage port -a -t quirkturt_port_t -p tcp 8332
-%{_sbindir}/semanage port -a -t quirkturt_port_t -p tcp 8333
-%{_sbindir}/semanage port -a -t quirkturt_port_t -p tcp 18332
-%{_sbindir}/semanage port -a -t quirkturt_port_t -p tcp 18333
-%{_sbindir}/semanage port -a -t quirkturt_port_t -p tcp 18443
-%{_sbindir}/semanage port -a -t quirkturt_port_t -p tcp 18444
-%{_sbindir}/fixfiles -R quirkturt-server restore &> /dev/null || :
-%{_sbindir}/restorecon -R %{_localstatedir}/lib/quirkturt || :
+%{_sbindir}/semanage port -a -t quirkyturt_port_t -p tcp 8332
+%{_sbindir}/semanage port -a -t quirkyturt_port_t -p tcp 8333
+%{_sbindir}/semanage port -a -t quirkyturt_port_t -p tcp 18332
+%{_sbindir}/semanage port -a -t quirkyturt_port_t -p tcp 18333
+%{_sbindir}/semanage port -a -t quirkyturt_port_t -p tcp 18443
+%{_sbindir}/semanage port -a -t quirkyturt_port_t -p tcp 18444
+%{_sbindir}/fixfiles -R quirkyturt-server restore &> /dev/null || :
+%{_sbindir}/restorecon -R %{_localstatedir}/lib/quirkyturt || :
 fi
 
 %posttrans server
 %{_bindir}/systemd-tmpfiles --create
 
 %preun server
-%systemd_preun quirkturt.service
+%systemd_preun quirkyturt.service
 
 %postun server
-%systemd_postun quirkturt.service
+%systemd_postun quirkyturt.service
 # SELinux
 if [ $1 -eq 0 ]; then
 	if [ `%{_sbindir}/sestatus |grep -c "disabled"` -eq 0 ]; then
@@ -360,11 +360,11 @@ if [ $1 -eq 0 ]; then
 	%{_sbindir}/semanage port -d -p tcp 18443
 	%{_sbindir}/semanage port -d -p tcp 18444
 	for selinuxvariant in %{selinux_variants}; do
-		%{_sbindir}/semodule -s ${selinuxvariant} -r quirkturt &> /dev/null || :
+		%{_sbindir}/semodule -s ${selinuxvariant} -r quirkyturt &> /dev/null || :
 	done
-	%{_sbindir}/fixfiles -R quirkturt-server restore &> /dev/null || :
-	[ -d %{_localstatedir}/lib/quirkturt ] && \
-		%{_sbindir}/restorecon -R %{_localstatedir}/lib/quirkturt &> /dev/null || :
+	%{_sbindir}/fixfiles -R quirkyturt-server restore &> /dev/null || :
+	[ -d %{_localstatedir}/lib/quirkyturt ] && \
+		%{_sbindir}/restorecon -R %{_localstatedir}/lib/quirkyturt &> /dev/null || :
 	fi
 fi
 
@@ -375,16 +375,16 @@ rm -rf %{buildroot}
 %files core
 %defattr(-,root,root,-)
 %license COPYING db-%{bdbv}.NC-LICENSE
-%doc COPYING quirkturt.conf.example doc/README.md doc/bips.md doc/files.md doc/multiwallet-qt.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
-%attr(0755,root,root) %{_bindir}/quirkturt-qt
-%attr(0644,root,root) %{_datadir}/applications/quirkturt-core.desktop
-%attr(0644,root,root) %{_datadir}/kde4/services/quirkturt-core.protocol
+%doc COPYING quirkyturt.conf.example doc/README.md doc/bips.md doc/files.md doc/multiwallet-qt.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
+%attr(0755,root,root) %{_bindir}/quirkyturt-qt
+%attr(0644,root,root) %{_datadir}/applications/quirkyturt-core.desktop
+%attr(0644,root,root) %{_datadir}/kde4/services/quirkyturt-core.protocol
 %attr(0644,root,root) %{_datadir}/pixmaps/*.ico
 %attr(0644,root,root) %{_datadir}/pixmaps/*.bmp
 %attr(0644,root,root) %{_datadir}/pixmaps/*.svg
 %attr(0644,root,root) %{_datadir}/pixmaps/*.png
 %attr(0644,root,root) %{_datadir}/pixmaps/*.xpm
-%attr(0644,root,root) %{_mandir}/man1/quirkturt-qt.1*
+%attr(0644,root,root) %{_mandir}/man1/quirkyturt-qt.1*
 %endif
 
 %files libs
@@ -406,30 +406,30 @@ rm -rf %{buildroot}
 %files server
 %defattr(-,root,root,-)
 %license COPYING db-%{bdbv}.NC-LICENSE
-%doc COPYING quirkturt.conf.example doc/README.md doc/REST-interface.md doc/bips.md doc/dnsseed-policy.md doc/files.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
-%attr(0755,root,root) %{_sbindir}/quirkturtd
-%attr(0644,root,root) %{_tmpfilesdir}/quirkturt.conf
-%attr(0644,root,root) %{_unitdir}/quirkturt.service
-%dir %attr(0750,quirkturt,quirkturt) %{_sysconfdir}/quirkturt
-%dir %attr(0750,quirkturt,quirkturt) %{_localstatedir}/lib/quirkturt
-%config(noreplace) %attr(0600,root,root) %{_sysconfdir}/sysconfig/quirkturt
+%doc COPYING quirkyturt.conf.example doc/README.md doc/REST-interface.md doc/bips.md doc/dnsseed-policy.md doc/files.md doc/reduce-traffic.md doc/release-notes.md doc/tor.md
+%attr(0755,root,root) %{_sbindir}/quirkyturtd
+%attr(0644,root,root) %{_tmpfilesdir}/quirkyturt.conf
+%attr(0644,root,root) %{_unitdir}/quirkyturt.service
+%dir %attr(0750,quirkyturt,quirkyturt) %{_sysconfdir}/quirkyturt
+%dir %attr(0750,quirkyturt,quirkyturt) %{_localstatedir}/lib/quirkyturt
+%config(noreplace) %attr(0600,root,root) %{_sysconfdir}/sysconfig/quirkyturt
 %attr(0644,root,root) %{_datadir}/selinux/*/*.pp
-%attr(0644,root,root) %{_mandir}/man1/quirkturtd.1*
+%attr(0644,root,root) %{_mandir}/man1/quirkyturtd.1*
 
 %files utils
 %defattr(-,root,root,-)
 %license COPYING
-%doc COPYING quirkturt.conf.example doc/README.md
-%attr(0755,root,root) %{_bindir}/quirkturt-cli
-%attr(0755,root,root) %{_bindir}/quirkturt-tx
-%attr(0755,root,root) %{_bindir}/bench_quirkturt
-%attr(0644,root,root) %{_mandir}/man1/quirkturt-cli.1*
+%doc COPYING quirkyturt.conf.example doc/README.md
+%attr(0755,root,root) %{_bindir}/quirkyturt-cli
+%attr(0755,root,root) %{_bindir}/quirkyturt-tx
+%attr(0755,root,root) %{_bindir}/bench_quirkyturt
+%attr(0644,root,root) %{_mandir}/man1/quirkyturt-cli.1*
 
 
 
 %changelog
 * Fri Feb 26 2016 Alice Wonder <buildmaster@librelamp.com> - 0.12.0-2
-- Rename Qt package from quirkturt to quirkturt-core
+- Rename Qt package from quirkyturt to quirkyturt-core
 - Make building of the Qt package optional
 - When building the Qt package, default to Qt5 but allow building
 -  against Qt4
@@ -439,4 +439,4 @@ rm -rf %{buildroot}
 - Initial spec file for 0.12.0 release
 
 # This spec file is written from scratch but a lot of the packaging decisions are directly
-# based upon the 0.11.2 package spec file from https://www.ringingliberty.com/quirkturt/
+# based upon the 0.11.2 package spec file from https://www.ringingliberty.com/quirkyturt/

@@ -102,7 +102,7 @@ static Checkpoints::MapCheckpoints mapCheckpoints = {
     {1788528, uint256S("ea9243ff8fc079fdd7a04f11fac415de4d98e1bb0dc38db6f79f8f8bbfdbe496")}, //!< Network split here
     {2153200, uint256S("14e477e597d24549cac5e59d97d32155e6ec2861c1003b42d0566f9bf39b65d5")}, //!< First v7 block
     {2356049, uint256S("62e80d8e193bca84655fb78893b20f54a79f2d71124c4ea37b7ef51a0d5451c4")}, //!< Network split here
-    {2365700, uint256S("b5d0beead57735539abc2db2b0b08cd65db3e5928efd3c3bf3182d5bf013f36c")}, //!< quirkturt v4.1.1 enforced
+    {2365700, uint256S("b5d0beead57735539abc2db2b0b08cd65db3e5928efd3c3bf3182d5bf013f36c")}, //!< quirkyturt v4.1.1 enforced
     {2678402, uint256S("580a26ff0a45177a7a6f387f009c5b26140ea48b4790a857d9a796f8b3c25899")}, //!< Network split here
 };
 
@@ -208,8 +208,8 @@ public:
         consensus.height_ZC_RecalcAccumulators = 908000;
 
         // validation by-pass
-        consensus.nquirkturtBadBlockTime = 1471401614;    // Skip nBit validation of Block 259201 per PR #915
-        consensus.nquirkturtBadBlockBits = 0x1c056dac;    // Skip nBit validation of Block 259201 per PR #915
+        consensus.nquirkyturtBadBlockTime = 1471401614;    // Skip nBit validation of Block 259201 per PR #915
+        consensus.nquirkyturtBadBlockBits = 0x1c056dac;    // Skip nBit validation of Block 259201 per PR #915
 
         // Zerocoin-related params
         consensus.ZC_Modulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"
@@ -268,8 +268,9 @@ public:
         nDefaultPort = 26021;
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        vSeeds.emplace_back("fuzzbawls.pw", "quirkturt.seed.fuzzbawls.pw", true);     // Primary DNS Seeder from Fuzzbawls
-        vSeeds.emplace_back("fuzzbawls.pw", "quirkturt.seed2.fuzzbawls.pw", true);    // Secondary DNS Seeder from Fuzzbawls
+        vSeeds.emplace_back("quirkyturt.org", "seed1.quirkyturt.org", true);     // Primary DNS Seeder from QT Team
+        vSeeds.emplace_back("quirkyturt.org", "seed2.quirkyturt.org", true);    // Secondary DNS Seeder from Qt Team
+        vSeeds.emplace_back("quirkyturt.org", "seed3.quirkyturt.org", true);    // Tertiary DNS Seeder from QT Team
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 30);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 13);
@@ -421,18 +422,18 @@ public:
         nDefaultPort = 26022;
 
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.emplace_back("fuzzbawls.pw", "quirkturt-testnet.seed.fuzzbawls.pw", true);
-        vSeeds.emplace_back("fuzzbawls.pw", "quirkturt-testnet.seed2.fuzzbawls.pw", true);
+        vSeeds.emplace_back("fuzzbawls.pw", "quirkyturt-testnet.seed.fuzzbawls.pw", true);
+        vSeeds.emplace_back("fuzzbawls.pw", "quirkyturt-testnet.seed2.fuzzbawls.pw", true);
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet quirkturt addresses start with 'x' or 'y'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet quirkturt script addresses start with '8' or '9'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet quirkyturt addresses start with 'x' or 'y'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet quirkyturt script addresses start with '8' or '9'
         base58Prefixes[STAKING_ADDRESS] = std::vector<unsigned char>(1, 73);     // starting with 'W'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
-        // Testnet quirkturt BIP32 pubkeys start with 'DRKV'
+        // Testnet quirkyturt BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_PUBLIC_KEY] = {0x3a, 0x80, 0x61, 0xa0};
-        // Testnet quirkturt BIP32 prvkeys start with 'DRKP'
+        // Testnet quirkyturt BIP32 prvkeys start with 'DRKP'
         base58Prefixes[EXT_SECRET_KEY] = {0x3a, 0x80, 0x58, 0x37};
-        // Testnet quirkturt BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet quirkyturt BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = {0x80, 0x00, 0x00, 0x01};
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
@@ -580,15 +581,15 @@ public:
         pchMessageStart[3] = 0xac;
         nDefaultPort = 26025;
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet quirkturt addresses start with 'x' or 'y'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet quirkturt script addresses start with '8' or '9'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet quirkyturt addresses start with 'x' or 'y'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet quirkyturt script addresses start with '8' or '9'
         base58Prefixes[STAKING_ADDRESS] = std::vector<unsigned char>(1, 73);     // starting with 'W'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
-        // Testnet quirkturt BIP32 pubkeys start with 'DRKV'
+        // Testnet quirkyturt BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_PUBLIC_KEY] = {0x3a, 0x80, 0x61, 0xa0};
-        // Testnet quirkturt BIP32 prvkeys start with 'DRKP'
+        // Testnet quirkyturt BIP32 prvkeys start with 'DRKP'
         base58Prefixes[EXT_SECRET_KEY] = {0x3a, 0x80, 0x58, 0x37};
-        // Testnet quirkturt BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet quirkyturt BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = {0x80, 0x00, 0x00, 0x01};
 
         // Reject non-standard transactions by default

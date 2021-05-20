@@ -34,13 +34,13 @@ Test is as follows:
 from decimal import Decimal
 import os
 
-from test_framework.test_framework import quirkturtTestFramework
+from test_framework.test_framework import quirkyturtTestFramework
 from test_framework.util import (
     assert_equal,
     wait_until,
 )
 
-class MempoolPersistTest(quirkturtTestFramework):
+class MempoolPersistTest(quirkyturtTestFramework):
     def set_test_params(self):
         self.num_nodes = 3
         self.extra_args = [[], ["-persistmempool=0"], []]

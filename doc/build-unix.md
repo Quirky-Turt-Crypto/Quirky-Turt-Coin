@@ -1,10 +1,10 @@
 UNIX BUILD NOTES
 ====================
-Some notes on how to build quirkturt Core in Unix.
+Some notes on how to build quirkyturt Core in Unix.
 
 Note
 ---------------------
-Always use absolute paths to configure and compile quirkturt Core and the dependencies,
+Always use absolute paths to configure and compile quirkyturt Core and the dependencies,
 For example, when specifying the path of the dependency:
 
 	../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX
@@ -22,7 +22,7 @@ make
 make install # optional
 ```
 
-This will build quirkturt-qt as well, if the dependencies are met.
+This will build quirkyturt-qt as well, if the dependencies are met.
 
 Dependencies
 ---------------------
@@ -52,7 +52,7 @@ Memory Requirements
 --------------------
 
 C++ compilers are memory-hungry. It is recommended to have at least 1.5 GB of
-memory available when compiling quirkturt Core. On systems with less, gcc can be
+memory available when compiling quirkyturt Core. On systems with less, gcc can be
 tuned to conserve memory with additional CXXFLAGS:
 
 
@@ -75,11 +75,11 @@ Now, you can either build from self-compiled [depends](/depends/README.md) or in
 
 BerkeleyDB is required for the wallet.
 
- **For Ubuntu only:** db4.8 packages are available [here](https://launchpad.net/~quirkturt/+archive/quirkturt).
+ **For Ubuntu only:** db4.8 packages are available [here](https://launchpad.net/~quirkyturt/+archive/quirkyturt).
  You can add the repository using the following command:
 
     sudo apt-get install software-properties-common
-    sudo add-apt-repository ppa:quirkturt/quirkturt
+    sudo add-apt-repository ppa:quirkyturt/quirkyturt
     sudo apt-get update
     sudo apt-get install libdb4.8-dev libdb4.8++-dev
 
@@ -90,7 +90,7 @@ pass `--with-incompatible-bdb` to configure.
 
 Otherwise, you can build from self-compiled `depends` (see above).
 
-To build quirkturt Core without wallet, see [*Disable-wallet mode*](/doc/build-unix.md#disable-wallet-mode)
+To build quirkyturt Core without wallet, see [*Disable-wallet mode*](/doc/build-unix.md#disable-wallet-mode)
 
 
 Optional (see --with-miniupnpc and --enable-upnp-default):
@@ -103,7 +103,7 @@ ZMQ dependencies (provides ZMQ API):
 
 GUI dependencies:
 
-If you want to build quirkturt-qt, make sure that the required packages for Qt development
+If you want to build quirkyturt-qt, make sure that the required packages for Qt development
 are installed. Qt 5 is necessary to build the GUI.
 To build without GUI pass `--without-gui`.
 
@@ -113,7 +113,7 @@ To build with Qt 5 you need the following:
 
 **Note:** Ubuntu versions prior to Bionic (18.04), and Debian version prior to Buster, do not have the `libqt5charts5-dev` package. If you are compiling on one of these older versions, you will need to omit `libqt5charts5-dev` from the above command.
 
-Once these are installed, they will be found by configure and a quirkturt-qt executable will be
+Once these are installed, they will be found by configure and a quirkyturt-qt executable will be
 built by default.
 
 
@@ -135,7 +135,7 @@ To build with Qt 5 you need the following:
 
 Notes
 -----
-The release is built with GCC and then "strip quirkturtd" to strip the debug
+The release is built with GCC and then "strip quirkyturtd" to strip the debug
 symbols, which reduces the executable size by about 90%.
 
 
@@ -184,7 +184,7 @@ If you need to build Boost yourself:
 
 Security
 --------
-To help make your quirkturt Core installation more secure by making certain attacks impossible to
+To help make your quirkyturt Core installation more secure by making certain attacks impossible to
 exploit even if a vulnerability is found, binaries are hardened by default.
 This can be disabled with:
 
@@ -206,7 +206,7 @@ Hardening enables the following features:
 
     To test that you have built PIE executable, install scanelf, part of paxutils, and use:
 
-    	scanelf -e ./quirkturtd
+    	scanelf -e ./quirkyturtd
 
     The output should contain:
 
@@ -214,13 +214,13 @@ Hardening enables the following features:
     ET_DYN
 
 * _Non-executable Stack_: If the stack is executable then trivial stack-based buffer overflow exploits are possible if
-    vulnerable buffers are found. By default, quirkturt Core should be built with a non-executable stack
+    vulnerable buffers are found. By default, quirkyturt Core should be built with a non-executable stack
     but if one of the libraries it uses asks for an executable stack or someone makes a mistake
     and uses a compiler extension which requires an executable stack, it will silently build an
     executable without the non-executable stack protection.
 
     To verify that the stack is non-executable after compiling use:
-    `scanelf -e ./quirkturtd`
+    `scanelf -e ./quirkyturtd`
 
     The output should contain:
 	STK/REL/PTL
@@ -232,7 +232,7 @@ Disable-wallet mode
 --------------------
 **Note:** This functionality is not yet completely implemented, and compilation using the below option will currently fail.
 
-When the intention is to run only a P2P node without a wallet, quirkturt Core may be compiled in
+When the intention is to run only a P2P node without a wallet, quirkyturt Core may be compiled in
 disable-wallet mode with:
 
     ./configure --disable-wallet

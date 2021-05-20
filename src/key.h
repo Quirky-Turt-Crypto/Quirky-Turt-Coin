@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_KEY_H
-#define quirkturt_KEY_H
+#ifndef quirkyturt_KEY_H
+#define quirkyturt_KEY_H
 
 #include "serialize.h"
 #include "support/allocators/secure.h"
@@ -180,4 +180,4 @@ void ECC_Stop(void);
 /** Check that required EC support is available at runtime. */
 bool ECC_InitSanityCheck(void);
 
-#endif // quirkturt_KEY_H
+#endif // quirkyturt_KEY_H

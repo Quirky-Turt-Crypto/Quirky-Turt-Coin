@@ -1,25 +1,25 @@
-# /etc/conf.d/quirkturtd: config file for /etc/init.d/quirkturtd
+# /etc/conf.d/quirkyturtd: config file for /etc/init.d/quirkyturtd
 
 # Config file location
-#BITCOIND_CONFIGFILE="/etc/quirkturt/quirkturt.conf"
+#BITCOIND_CONFIGFILE="/etc/quirkyturt/quirkyturt.conf"
 
 # What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
-#BITCOIND_PIDDIR="/var/run/quirkturtd"
+#BITCOIND_PIDDIR="/var/run/quirkyturtd"
 
 # What filename to give the pidfile
-#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/quirkturtd.pid"
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/quirkyturtd.pid"
 
-# Where to write quirkturtd data (be mindful that the blockchain is large)
-#BITCOIND_DATADIR="/var/lib/quirkturtd"
+# Where to write quirkyturtd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/quirkyturtd"
 
-# User and group to own quirkturtd process
-#BITCOIND_USER="quirkturt"
-#BITCOIND_GROUP="quirkturt"
+# User and group to own quirkyturtd process
+#BITCOIND_USER="quirkyturt"
+#BITCOIND_GROUP="quirkyturt"
 
-# Path to quirkturtd executable
-#BITCOIND_BIN="/usr/bin/quirkturtd"
+# Path to quirkyturtd executable
+#BITCOIND_BIN="/usr/bin/quirkyturtd"
 
-# Nice value to run quirkturtd under
+# Nice value to run quirkyturtd under
 #BITCOIND_NICE=0
 
 # Additional options (avoid -conf and -datadir, use flags above)

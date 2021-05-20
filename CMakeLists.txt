@@ -21,7 +21,7 @@ if(RUSTC_PROGRAM)
     message(STATUS "Found rustc: ${RUSTC_PROGRAM}")
 endif()
 
-project(quirkturt)
+project(quirkyturt)
 
 set(BDB_VER "4.8.30")
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/contrib/cmake")
@@ -50,7 +50,7 @@ elseif(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
         message(STATUS "Compiling on WSL")
         set(ENV{DISPLAY} ":0")
         set(ENV{LIBGL_ALWAYS_INDIRECT} 1)
-        set(CMAKE_RUNTIME_OUTPUT_DIRECTORY /home/$ENV{USER}/quirkturt-run)
+        set(CMAKE_RUNTIME_OUTPUT_DIRECTORY /home/$ENV{USER}/quirkyturt-run)
         message(WARNING "WSL Runtime support requires VcXsrv to be installed and running")
     else()
         message(STATUS "Compiling on Linux")
@@ -91,8 +91,8 @@ else()
     )
 endif()
 
-# run configure if quirkturt_config.h doesn't exist
-if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/config/quirkturt-config.h")
+# run configure if quirkyturt_config.h doesn't exist
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/config/quirkyturt-config.h")
 else()
     execute_process(
         COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/configure ${CONFIGSITE} ${BDB_CONFIGURE_FLAGS} ${BIGNUM_CONFIGURE_FLAGS}
@@ -101,7 +101,7 @@ else()
 endif()
 
 # error out if configure fails
-if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/config/quirkturt-config.h")
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/config/quirkyturt-config.h")
 else()
     execute_process(COMMAND cat config.log WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
     message(FATAL_ERROR "configure script didn't finish properly see config.log output above")
@@ -470,13 +470,13 @@ link_directories(
 
 link_directories(${CMAKE_BINARY_DIR})
 
-set(quirkturt-cli_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/quirkturt-cli.cpp)
+set(quirkyturt-cli_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/quirkyturt-cli.cpp)
 if($ENV{target} MATCHES "Windows")
-    list(APPEND quirkturt-cli_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/quirkturt-cli-res.rc)
+    list(APPEND quirkyturt-cli_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/quirkyturt-cli-res.rc)
 endif()
-add_executable(quirkturt-cli ${quirkturt-cli_SOURCES})
-add_dependencies(quirkturt-cli libunivalue libzcashrust)
-target_link_libraries(quirkturt-cli
+add_executable(quirkyturt-cli ${quirkyturt-cli_SOURCES})
+add_dependencies(quirkyturt-cli libunivalue libzcashrust)
+target_link_libraries(quirkyturt-cli
         CLI_A
         univalue
         UTIL_A
@@ -486,19 +486,19 @@ target_link_libraries(quirkturt-cli
         ${Boost_LIBRARIES} ${LIBEVENT_LIB} ${sodium_LIBRARY_RELEASE} -ldl pthread
         )
 if($ENV{target} MATCHES "Windows")
-    target_link_libraries(quirkturt-cli ${WINDOWS_LDADD})
+    target_link_libraries(quirkyturt-cli ${WINDOWS_LDADD})
 endif()
 if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    target_link_libraries(quirkturt-cli "-framework Cocoa")
+    target_link_libraries(quirkyturt-cli "-framework Cocoa")
 endif()
 
-set(quirkturt-tx_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/quirkturt-tx.cpp)
+set(quirkyturt-tx_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/quirkyturt-tx.cpp)
 if($ENV{target} MATCHES "Windows")
-    list(APPEND quirkturt-tx_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/quirkturt-tx-res.rc)
+    list(APPEND quirkyturt-tx_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/quirkyturt-tx-res.rc)
 endif()
-add_executable(quirkturt-tx ${quirkturt-tx_SOURCES})
-add_dependencies(quirkturt-tx libunivalue libsecp256k1 libzcashrust)
-target_link_libraries(quirkturt-tx
+add_executable(quirkyturt-tx ${quirkyturt-tx_SOURCES})
+add_dependencies(quirkyturt-tx libunivalue libsecp256k1 libzcashrust)
+target_link_libraries(quirkyturt-tx
         univalue
         COMMON_A
         ZEROCOIN_A
@@ -510,25 +510,25 @@ target_link_libraries(quirkturt-tx
         ${Boost_LIBRARIES} ${LIBEVENT_LIB} ${sodium_LIBRARY_RELEASE} ${GMP_LIBRARY} -ldl pthread
         )
 if($ENV{target} MATCHES "Windows")
-    target_link_libraries(quirkturt-tx ${WINDOWS_LDADD})
+    target_link_libraries(quirkyturt-tx ${WINDOWS_LDADD})
 endif()
 if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    target_link_libraries(quirkturt-tx "-framework Cocoa")
+    target_link_libraries(quirkyturt-tx "-framework Cocoa")
 endif()
 
-set(quirkturtd_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/quirkturtd.cpp)
+set(quirkyturtd_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/quirkyturtd.cpp)
 if($ENV{target} MATCHES "Windows")
-    list(APPEND quirkturtd_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/quirkturtd-res.rc)
+    list(APPEND quirkyturtd_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/quirkyturtd-res.rc)
 endif()
-add_executable(quirkturtd ${quirkturtd_SOURCES} ${BitcoinHeaders})
-add_dependencies(quirkturtd libunivalue libsecp256k1 libzcashrust leveldb crc32c)
-target_include_directories(quirkturtd PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src
+add_executable(quirkyturtd ${quirkyturtd_SOURCES} ${BitcoinHeaders})
+add_dependencies(quirkyturtd libunivalue libsecp256k1 libzcashrust leveldb crc32c)
+target_include_directories(quirkyturtd PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src
         ${CMAKE_CURRENT_SOURCE_DIR}/src/leveldb
         ${CMAKE_CURRENT_SOURCE_DIR}/src/leveldb/include
         ${CMAKE_CURRENT_SOURCE_DIR}/src/leveldb/helpers/memenv
         ${LIBEVENT_INCLUDE_DIR}
         ${GMP_INCLUDE_DIR})
-target_link_libraries(quirkturtd
+target_link_libraries(quirkyturtd
         pthread
         SERVER_A
         WALLET_A
@@ -546,23 +546,23 @@ target_link_libraries(quirkturtd
         )
 if($ENV{target} MATCHES "Windows")
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wstack-protector -fstack-protector-all -fPIE -pipe -O2 -pthread -Wl,--dynamicbase -Wl,--nxcompat -Wl,--high-entropy-va -pie --static")
-    target_link_libraries(quirkturtd ${WINDOWS_LDADD})
+    target_link_libraries(quirkyturtd ${WINDOWS_LDADD})
 endif()
 if(ZMQ_FOUND)
-    target_link_libraries(quirkturtd ZMQ_A ${ZMQ_LIB})
-    target_include_directories(quirkturtd PUBLIC ${ZMQ_INCLUDE_DIR})
+    target_link_libraries(quirkyturtd ZMQ_A ${ZMQ_LIB})
+    target_include_directories(quirkyturtd PUBLIC ${ZMQ_INCLUDE_DIR})
 endif()
 if(MINIUPNP_FOUND)
-    target_compile_definitions(quirkturtd PUBLIC "-DSTATICLIB -DMINIUPNP_STATICLIB")
-    target_link_libraries(quirkturtd ${MINIUPNP_LIBRARY})
-    target_include_directories(quirkturtd PUBLIC ${MINIUPNP_INCLUDE_DIR})
+    target_compile_definitions(quirkyturtd PUBLIC "-DSTATICLIB -DMINIUPNP_STATICLIB")
+    target_link_libraries(quirkyturtd ${MINIUPNP_LIBRARY})
+    target_include_directories(quirkyturtd PUBLIC ${MINIUPNP_INCLUDE_DIR})
 endif()
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-    target_link_libraries(quirkturtd "-framework Cocoa")
+    target_link_libraries(quirkyturtd "-framework Cocoa")
 endif()
 
-target_link_libraries(quirkturtd ${sodium_LIBRARY_RELEASE} -ldl -lpthread)
+target_link_libraries(quirkyturtd ${sodium_LIBRARY_RELEASE} -ldl -lpthread)
 
 add_subdirectory(src/qt)
 add_subdirectory(src/test)

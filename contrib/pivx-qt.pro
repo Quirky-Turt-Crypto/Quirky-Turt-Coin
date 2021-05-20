@@ -78,7 +78,7 @@ HEADERS += src/activemasternode.h \
            src/crypter.h \
            src/obfuscation-relay.h \
            src/obfuscation.h \
-           src/quirkturt-config.h \
+           src/quirkyturt-config.h \
            src/db.h \
            src/eccryptoverify.h \
            src/ecwrapper.h \
@@ -131,7 +131,7 @@ HEADERS += src/activemasternode.h \
            src/wallet_ismine.h \
            src/walletdb.h \
            src/compat/sanity.h \
-           src/config/quirkturt-config.h \
+           src/config/quirkyturt-config.h \
            src/crypto/common.h \
            src/crypto/hmac_sha256.h \
            src/crypto/hmac_sha512.h \
@@ -332,7 +332,7 @@ HEADERS += src/activemasternode.h \
            src/secp256k1/src/java/org_bitcoin_NativeSecp256k1.h \
            src/crypto/aes_helper.c \
            src/qt/bitcoinamountfield.moc \
-           src/qt/quirkturt.moc \
+           src/qt/quirkyturt.moc \
            src/qt/intro.moc \
            src/qt/overviewpage.moc \
            src/qt/rpcconsole.moc \
@@ -373,9 +373,9 @@ SOURCES += src/activemasternode.cpp \
            src/crypter.cpp \
            src/obfuscation-relay.cpp \
            src/obfuscation.cpp \
-           src/quirkturt-cli.cpp \
-           src/quirkturt-tx.cpp \
-           src/quirkturt.cpp \
+           src/quirkyturt-cli.cpp \
+           src/quirkyturt-tx.cpp \
+           src/quirkyturt.cpp \
            src/db.cpp \
            src/eccryptoverify.cpp \
            src/ecwrapper.cpp \
@@ -470,8 +470,8 @@ SOURCES += src/activemasternode.cpp \
            src/qt/coincontroltreewidget.cpp \
            src/qt/csvmodelwriter.cpp \
            src/qt/obfuscationconfig.cpp \
-           src/qt/quirkturt.cpp \
-           src/qt/quirkturtstrings.cpp \
+           src/qt/quirkyturt.cpp \
+           src/qt/quirkyturtstrings.cpp \
            src/qt/editaddressdialog.cpp \
            src/qt/guiutil.cpp \
            src/qt/intro.cpp \
@@ -549,7 +549,7 @@ SOURCES += src/activemasternode.cpp \
            src/test/sighash_tests.cpp \
            src/test/sigopcount_tests.cpp \
            src/test/skiplist_tests.cpp \
-           src/test/test_quirkturt.cpp \
+           src/test/test_quirkyturt.cpp \
            src/test/timedata_tests.cpp \
            src/test/transaction_tests.cpp \
            src/test/uint256_tests.cpp \
@@ -640,24 +640,24 @@ SOURCES += src/activemasternode.cpp \
            src/leveldb/helpers/memenv/memenv.cc \
            src/leveldb/helpers/memenv/memenv_test.cc \
            src/secp256k1/src/java/org_bitcoin_NativeSecp256k1.c
-RESOURCES += src/qt/quirkturt.qrc src/qt/quirkturt_locale.qrc
+RESOURCES += src/qt/quirkyturt.qrc src/qt/quirkyturt_locale.qrc
 
-TRANSLATIONS += src/qt/locale/quirkturt_bg.ts \
-                src/qt/locale/quirkturt_de.ts \
-                src/qt/locale/quirkturt_en.ts \
-                src/qt/locale/quirkturt_es.ts \
-                src/qt/locale/quirkturt_fi.ts \
-                src/qt/locale/quirkturt_fr.ts \
-                src/qt/locale/quirkturt_it.ts \
-                src/qt/locale/quirkturt_ja.ts \
-                src/qt/locale/quirkturt_pl.ts \
-                src/qt/locale/quirkturt_pt.ts \
-                src/qt/locale/quirkturt_ru.ts \
-                src/qt/locale/quirkturt_sk.ts \
-                src/qt/locale/quirkturt_sv.ts \
-                src/qt/locale/quirkturt_vi.ts \
-                src/qt/locale/quirkturt_zh_CN.ts \
-                src/qt/locale/quirkturt_zh_TW.ts
+TRANSLATIONS += src/qt/locale/quirkyturt_bg.ts \
+                src/qt/locale/quirkyturt_de.ts \
+                src/qt/locale/quirkyturt_en.ts \
+                src/qt/locale/quirkyturt_es.ts \
+                src/qt/locale/quirkyturt_fi.ts \
+                src/qt/locale/quirkyturt_fr.ts \
+                src/qt/locale/quirkyturt_it.ts \
+                src/qt/locale/quirkyturt_ja.ts \
+                src/qt/locale/quirkyturt_pl.ts \
+                src/qt/locale/quirkyturt_pt.ts \
+                src/qt/locale/quirkyturt_ru.ts \
+                src/qt/locale/quirkyturt_sk.ts \
+                src/qt/locale/quirkyturt_sv.ts \
+                src/qt/locale/quirkyturt_vi.ts \
+                src/qt/locale/quirkyturt_zh_CN.ts \
+                src/qt/locale/quirkyturt_zh_TW.ts
 
 DISTFILES += \
     README.md

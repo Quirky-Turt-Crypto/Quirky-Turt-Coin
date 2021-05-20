@@ -3,7 +3,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://www.opensource.org/licenses/mit-license.php .
 
-from test_framework.test_framework import quirkturtTestFramework
+from test_framework.test_framework import quirkyturtTestFramework
 
 from test_framework.util import (
     assert_greater_than,
@@ -23,7 +23,7 @@ def timed(f):
 
 MAX_SHIELDED_BLOCKSIZE = 750000
 
-class SaplingFillBlockTest(quirkturtTestFramework):
+class SaplingFillBlockTest(quirkyturtTestFramework):
 
     def set_test_params(self):
         self.num_nodes = 2

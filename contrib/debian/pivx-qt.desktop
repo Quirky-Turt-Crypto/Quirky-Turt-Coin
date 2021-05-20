@@ -1,13 +1,13 @@
 [Desktop Entry]
 Version=1.0
-Name=quirkturt Core
-Comment=quirkturt P2P Cryptocurrency
-Comment[fr]=quirkturt, monnaie virtuelle cryptographique pair à pair
-Comment[tr]=quirkturt, eşten eşe kriptografik sanal para birimi
-Exec=quirkturt-qt %u
+Name=quirkyturt Core
+Comment=quirkyturt P2P Cryptocurrency
+Comment[fr]=quirkyturt, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=quirkyturt, eşten eşe kriptografik sanal para birimi
+Exec=quirkyturt-qt %u
 Terminal=false
 Type=Application
-Icon=quirkturt128
-MimeType=x-scheme-handler/quirkturt;
+Icon=quirkyturt128
+MimeType=x-scheme-handler/quirkyturt;
 Categories=Office;Finance;
-StartupWMClass=quirkturt-qt
+StartupWMClass=quirkyturt-qt

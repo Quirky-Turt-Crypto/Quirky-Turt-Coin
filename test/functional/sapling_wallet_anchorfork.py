@@ -4,11 +4,11 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://www.opensource.org/licenses/mit-license.php .
 
-from test_framework.test_framework import quirkturtTestFramework
+from test_framework.test_framework import quirkyturtTestFramework
 from test_framework.util import *
 from decimal import Decimal
 
-class WalletAnchorForkTest(quirkturtTestFramework):
+class WalletAnchorForkTest(quirkyturtTestFramework):
 
     def set_test_params(self):
         self.num_nodes = 3

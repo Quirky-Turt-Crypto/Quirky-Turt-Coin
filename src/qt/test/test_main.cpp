@@ -5,7 +5,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/quirkturt-config.h"
+#include "config/quirkyturt-config.h"
 #endif
 
 #include "util.h"
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
     // Don't remove this, it's needed to access
     // QCoreApplication:: in the tests
     QCoreApplication app(argc, argv);
-    app.setApplicationName("quirkturt-Qt-test");
+    app.setApplicationName("quirkyturt-Qt-test");
 
     URITests test1;
     if (QTest::qExec(&test1) != 0)

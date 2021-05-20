@@ -7,10 +7,10 @@ BUILDDIR=${BUILDDIR:-$TOPDIR}
 BINDIR=${BINDIR:-$BUILDDIR/src}
 MANDIR=${MANDIR:-$TOPDIR/doc/man}
 
-BITCOIND=${BITCOIND:-$BINDIR/quirkturtd}
-BITCOINCLI=${BITCOINCLI:-$BINDIR/quirkturt-cli}
-BITCOINTX=${BITCOINTX:-$BINDIR/quirkturt-tx}
-BITCOINQT=${BITCOINQT:-$BINDIR/qt/quirkturt-qt}
+BITCOIND=${BITCOIND:-$BINDIR/quirkyturtd}
+BITCOINCLI=${BITCOINCLI:-$BINDIR/quirkyturt-cli}
+BITCOINTX=${BITCOINTX:-$BINDIR/quirkyturt-tx}
+BITCOINQT=${BITCOINQT:-$BINDIR/qt/quirkyturt-qt}
 
 [ ! -x $BITCOIND ] && echo "$BITCOIND not found or not executable." && exit 1
 

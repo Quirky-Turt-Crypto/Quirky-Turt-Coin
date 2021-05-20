@@ -4,7 +4,7 @@
 
 #include "compressor.h"
 #include "util.h"
-#include "test/test_quirkturt.h"
+#include "test/test_quirkyturt.h"
 
 #include <stdint.h>
 

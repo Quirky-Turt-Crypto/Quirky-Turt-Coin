@@ -5,8 +5,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_UINT256_H
-#define quirkturt_UINT256_H
+#ifndef quirkyturt_UINT256_H
+#define quirkyturt_UINT256_H
 
 #include "crypto/common.h"
 
@@ -219,4 +219,4 @@ namespace std {
     };
 }
 
-#endif // quirkturt_UINT256_H
+#endif // quirkyturt_UINT256_H

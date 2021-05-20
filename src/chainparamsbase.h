@@ -3,16 +3,16 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_CHAINPARAMSBASE_H
-#define quirkturt_CHAINPARAMSBASE_H
+#ifndef quirkyturt_CHAINPARAMSBASE_H
+#define quirkyturt_CHAINPARAMSBASE_H
 
 #include <memory>
 #include <string>
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between quirkturt-cli and quirkturtd)
- * of a given instance of the quirkturt system.
+ * CBaseChainParams defines the base parameters (shared between quirkyturt-cli and quirkyturtd)
+ * of a given instance of the quirkyturt system.
  */
 class CBaseChainParams
 {
@@ -62,4 +62,4 @@ void SelectBaseParams(const std::string& chain);
  */
 std::string ChainNameFromCommandLine();
 
-#endif // quirkturt_CHAINPARAMSBASE_H
+#endif // quirkyturt_CHAINPARAMSBASE_H

@@ -6,7 +6,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/quirkturt-config.h"
+#include "config/quirkyturt-config.h"
 #endif
 
 #include "util.h"
@@ -77,12 +77,12 @@
 #include <CoreFoundation/CoreFoundation.h>
 #endif
 
-const char * const quirkturt_CONF_FILENAME = "quirkturt.conf";
-const char * const quirkturt_PID_FILENAME = "quirkturt.pid";
-const char * const quirkturt_MASTERNODE_CONF_FILENAME = "masternode.conf";
+const char * const quirkyturt_CONF_FILENAME = "quirkyturt.conf";
+const char * const quirkyturt_PID_FILENAME = "quirkyturt.pid";
+const char * const quirkyturt_MASTERNODE_CONF_FILENAME = "masternode.conf";
 
 
-// quirkturt only features
+// quirkyturt only features
 // Masternode
 std::atomic<bool> fMasterNode{false};
 std::string strMasterNodeAddr = "";
@@ -175,7 +175,7 @@ public:
         std::pair<bool,std::string> found_result(false, std::string());
 
         // We pass "true" to GetArgHelper in order to return the last
-        // argument value seen from the command line (so "quirkturtd -foo=bar
+        // argument value seen from the command line (so "quirkyturtd -foo=bar
         // -foo=baz" gives GetArg(am,"foo")=={true,"baz"}
         found_result = GetArgHelper(am.m_override_args, arg, true);
         if (found_result.first) {
@@ -458,7 +458,7 @@ static std::string FormatException(const std::exception* pex, const char* pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "quirkturt";
+    const char* pszModule = "quirkyturt";
 #endif
     if (pex)
         return strprintf(
@@ -477,13 +477,13 @@ void PrintExceptionContinue(const std::exception* pex, const char* pszThread)
 
 fs::path GetDefaultDataDir()
 {
-// Windows < Vista: C:\Documents and Settings\Username\Application Data\quirkturt
-// Windows >= Vista: C:\Users\Username\AppData\Roaming\quirkturt
-// Mac: ~/Library/Application Support/quirkturt
-// Unix: ~/.quirkturt
+// Windows < Vista: C:\Documents and Settings\Username\Application Data\quirkyturt
+// Windows >= Vista: C:\Users\Username\AppData\Roaming\quirkyturt
+// Mac: ~/Library/Application Support/quirkyturt
+// Unix: ~/.quirkyturt
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "quirkturt";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "quirkyturt";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -495,10 +495,10 @@ fs::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectories(pathRet);
-    return pathRet / "quirkturt";
+    return pathRet / "quirkyturt";
 #else
     // Unix
-    return pathRet / ".quirkturt";
+    return pathRet / ".quirkyturt";
 #endif
 #endif
 }
@@ -512,13 +512,13 @@ static RecursiveMutex csPathCached;
 static fs::path ZC_GetBaseParamsDir()
 {
     // Copied from GetDefaultDataDir and adapter for zcash params.
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\quirkturtParams
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\quirkturtParams
-    // Mac: ~/Library/Application Support/quirkturtParams
-    // Unix: ~/.quirkturt-params
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\quirkyturtParams
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\quirkyturtParams
+    // Mac: ~/Library/Application Support/quirkyturtParams
+    // Unix: ~/.quirkyturt-params
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "quirkturtParams";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "quirkyturtParams";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -530,10 +530,10 @@ static fs::path ZC_GetBaseParamsDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectories(pathRet);
-    return pathRet / "quirkturtParams";
+    return pathRet / "quirkyturtParams";
 #else
     // Unix
-    return pathRet / ".quirkturt-params";
+    return pathRet / ".quirkyturt-params";
 #endif
 #endif
 }
@@ -599,14 +599,14 @@ void initZKSNARKS()
         CFRelease(mainBundle);
 #else
         // Linux fallback path for debuild/ppa based installs
-        sapling_spend = "/usr/share/quirkturt/sapling-spend.params";
-        sapling_output = "/usr/share/quirkturt/sapling-output.params";
+        sapling_spend = "/usr/share/quirkyturt/sapling-spend.params";
+        sapling_output = "/usr/share/quirkyturt/sapling-output.params";
         if (fs::exists(sapling_spend) && fs::exists(sapling_output)) {
             fParamsFound = true;
         } else {
             // Linux fallback for local installs
-            sapling_spend = "/usr/local/share/quirkturt/sapling-spend.params";
-            sapling_output = "/usr/local/share/quirkturt/sapling-output.params";
+            sapling_spend = "/usr/local/share/quirkyturt/sapling-spend.params";
+            sapling_output = "/usr/local/share/quirkyturt/sapling-output.params";
         }
 #endif
         if (fs::exists(sapling_spend) && fs::exists(sapling_output))
@@ -711,7 +711,7 @@ fs::path GetConfigFile(const std::string& confPath)
 
 fs::path GetMasternodeConfigFile()
 {
-    fs::path pathConfigFile(gArgs.GetArg("-mnconf", quirkturt_MASTERNODE_CONF_FILENAME));
+    fs::path pathConfigFile(gArgs.GetArg("-mnconf", quirkyturt_MASTERNODE_CONF_FILENAME));
     return AbsPathForConfigVal(pathConfigFile);
 }
 
@@ -811,7 +811,7 @@ std::string ArgsManager::GetChainName() const
 #ifndef WIN32
 fs::path GetPidFile()
 {
-    fs::path pathPidFile(gArgs.GetArg("-pid", quirkturt_PID_FILENAME));
+    fs::path pathPidFile(gArgs.GetArg("-pid", quirkyturt_PID_FILENAME));
     return AbsPathForConfigVal(pathPidFile);
 }
 

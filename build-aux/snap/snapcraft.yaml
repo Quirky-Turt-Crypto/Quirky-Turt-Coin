@@ -1,78 +1,78 @@
 # Copyright (c) 2018-2019 The Ion developers
 # Copyright (c) 2019 The PIVX developers
-name: quirkturt-core
+name: quirkyturt-core
 base: core18
 version: 5.1.99
-summary:   quirkturt (Private – Instant – Verified – Transaction)
+summary:   quirkyturt (Private – Instant – Verified – Transaction)
 description: |
-  quirkturt is an MIT licensed,
+  quirkyturt is an MIT licensed,
   open source, blockchain-based cryptocurrency with
   ultra fast transactions, low fees, high network decentralization, and
   Zero Knowledge cryptography proofs for industry-leading
   transaction anonymity.
 
-  - [Download](https://quirkturt.org/wp-content/uploads/2018/10/quirkturt-White.pdf) quirkturt White Paper PDF
+  - [Download](https://quirkyturt.org/wp-content/uploads/2018/10/quirkyturt-White.pdf) quirkyturt White Paper PDF
 grade: devel
 confinement: strict
 
 apps:
   daemon:
-    command: quirkturtd
+    command: quirkyturtd
     plugs: [network, network-bind, home, removable-media]
-    desktop: quirkturtd.desktop
+    desktop: quirkyturtd.desktop
     environment:
       XDG_DATA_DIRS: $SNAP_USER_DATA:$SNAP/usr/share:$XDG_DATA_DIRS
       HOME: $SNAP_USER_COMMON
   daemon-testnet:
-    command: quirkturtd --testnet
+    command: quirkyturtd --testnet
     plugs: [network, network-bind, home, removable-media]
-    desktop: quirkturtd_testnet.desktop
+    desktop: quirkyturtd_testnet.desktop
     environment:
       XDG_DATA_DIRS: $SNAP_USER_DATA:$SNAP/usr/share:$XDG_DATA_DIRS
       HOME: $SNAP_USER_COMMON
   qt:
-    command: desktop-launch quirkturt-qt
+    command: desktop-launch quirkyturt-qt
     plugs: [network, network-bind, network-status, unity7, desktop, desktop-legacy, wayland, x11, mir, opengl, home, gsettings, removable-media, screen-inhibit-control, pulseaudio, media-hub]
-    desktop: quirkturt-qt.desktop
+    desktop: quirkyturt-qt.desktop
     environment:
       QT_XKB_CONFIG_ROOT: $SNAP_USER_DATA:$SNAP/usr/share:$QT_XKB_CONFIG_ROOT
       XDG_DATA_DIRS: $SNAP_USER_DATA:$SNAP/usr/share:$XDG_DATA_DIRS
       HOME: $SNAP_USER_COMMON
   qt-testnet:
-    command: desktop-launch quirkturt-qt --testnet
+    command: desktop-launch quirkyturt-qt --testnet
     plugs: [network, network-bind, network-status, unity7, desktop, desktop-legacy, wayland, x11, mir, opengl, home, gsettings, removable-media, screen-inhibit-control, pulseaudio, media-hub]
-    desktop: quirkturt-qt_testnet.desktop
+    desktop: quirkyturt-qt_testnet.desktop
     environment:
       QT_XKB_CONFIG_ROOT: $SNAP_USER_DATA:$SNAP/usr/share:$QT_XKB_CONFIG_ROOT
       XDG_DATA_DIRS: $SNAP_USER_DATA:$SNAP/usr/share:$XDG_DATA_DIRS
       HOME: $SNAP_USER_COMMON
   cli:
-    command: quirkturt-cli
+    command: quirkyturt-cli
     plugs: [network, network-bind, home, removable-media]
     environment:
       XDG_DATA_DIRS: $SNAP_USER_DATA:$SNAP/usr/share:$XDG_DATA_DIRS
       HOME: $SNAP_USER_COMMON
   cli-testnet:
-    command: quirkturt-cli --testnet
+    command: quirkyturt-cli --testnet
     plugs: [network, network-bind, home, removable-media]
     environment:
       XDG_DATA_DIRS: $SNAP_USER_DATA:$SNAP/usr/share:$XDG_DATA_DIRS
       HOME: $SNAP_USER_COMMON
   tx:
-    command: quirkturt-tx
+    command: quirkyturt-tx
     plugs: [home]
   test:
-    command: test_quirkturt
+    command: test_quirkyturt
     plugs: [home]
   testqt:
-    command: test_quirkturt-qt
+    command: test_quirkyturt-qt
     plugs: [home]
 
 layout:
-  /usr/share/quirkturt/sapling-spend.params:
-    bind-file: $SNAP/share/quirkturt/sapling-spend.params
-  /usr/share/quirkturt/sapling-output.params:
-    bind-file: $SNAP/share/quirkturt/sapling-output.params
+  /usr/share/quirkyturt/sapling-spend.params:
+    bind-file: $SNAP/share/quirkyturt/sapling-spend.params
+  /usr/share/quirkyturt/sapling-output.params:
+    bind-file: $SNAP/share/quirkyturt/sapling-output.params
 
 parts:
 
@@ -105,8 +105,8 @@ parts:
       - xdg-user-dirs
       - fcitx-frontend-qt5
 
-  quirkturt-core:
-    source: https://github.com/quirkturt-Project/quirkturt
+  quirkyturt-core:
+    source: https://github.com/quirkyturt-Project/quirkyturt
     source-type: git
     source-tag: master
     plugin: nil
@@ -118,7 +118,7 @@ parts:
       #    project is called ioncore because ion exists already as package. For anybody
       #    offering non official release and using own SNAP, this variable should be used
       #    default value is "false", to enable it, use your projects binary prefix
-      OVERRIDEBINPREFIX="quirkturt"
+      OVERRIDEBINPREFIX="quirkyturt"
       OVERRIDEDATADIR="false"
       OVERRIDECONF="${OVERRIDEDATADIR}"
       COPYCONF=0    # copy example config into users data folder, 1 = enabled
@@ -227,8 +227,8 @@ parts:
       echo "INSTALLATION OF ${BINPREF}-${SNAPCRAFT_PROJECT_VERSION}" # run make install with a prefix where to install
       echo "+++++++++++++++++++++++++++++++++++++++++++++++"
       make install prefix=${SNAPCRAFT_PART_INSTALL}
-      install -m 0644 -D -T $SNAPCRAFT_PART_BUILD/src/qt/res/icons/bitcoin.png $SNAPCRAFT_PART_INSTALL/share/pixmaps/quirkturt.png
-      install -m 0644 -D -T $SNAPCRAFT_PART_BUILD/src/qt/res/icons/bitcoin_testnet.png $SNAPCRAFT_PART_INSTALL/share/pixmaps/quirkturt_testnet.png
+      install -m 0644 -D -T $SNAPCRAFT_PART_BUILD/src/qt/res/icons/bitcoin.png $SNAPCRAFT_PART_INSTALL/share/pixmaps/quirkyturt.png
+      install -m 0644 -D -T $SNAPCRAFT_PART_BUILD/src/qt/res/icons/bitcoin_testnet.png $SNAPCRAFT_PART_INSTALL/share/pixmaps/quirkyturt_testnet.png
       echo "-----------------------------------------------"
       echo "+++++++++++++++++++++++++++++++++++++++++++++++"
       echo "POST INSTALL SCRIPTS OF ${BINPREF}-${SNAPCRAFT_PROJECT_VERSION}" # run make install with a prefix where to install
@@ -262,7 +262,7 @@ parts:
       fi
       echo "-----------------------------------------------"
       echo "+++++++++++++++++++++++++++++++++++++++++++++++"
-      echo "CONFIG FILE" # create .quirkturt folder and copy example config - !!!warning!!!: do not copy as quirkturt.conf
+      echo "CONFIG FILE" # create .quirkyturt folder and copy example config - !!!warning!!!: do not copy as quirkyturt.conf
       echo "+++++++++++++++++++++++++++++++++++++++++++++++"
       mkdir -p ${SNAP_USER_COMMON}/.${DATADIR}
       if [ $COPYCONF = 1 ]; then

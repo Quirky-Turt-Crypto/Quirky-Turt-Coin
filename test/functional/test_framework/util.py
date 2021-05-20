@@ -305,7 +305,7 @@ def initialize_datadir(dirname, n):
     datadir = get_datadir_path(dirname, n)
     if not os.path.isdir(datadir):
         os.makedirs(datadir)
-    with open(os.path.join(datadir, "quirkturt.conf"), 'w', encoding='utf8') as f:
+    with open(os.path.join(datadir, "quirkyturt.conf"), 'w', encoding='utf8') as f:
         f.write("regtest=1\n")
         f.write("[regtest]\n")
         f.write("port=" + str(p2p_port(n)) + "\n")
@@ -324,8 +324,8 @@ def get_datadir_path(dirname, n):
 def get_auth_cookie(datadir):
     user = None
     password = None
-    if os.path.isfile(os.path.join(datadir, "quirkturt.conf")):
-        with open(os.path.join(datadir, "quirkturt.conf"), 'r', encoding='utf8') as f:
+    if os.path.isfile(os.path.join(datadir, "quirkyturt.conf")):
+        with open(os.path.join(datadir, "quirkyturt.conf"), 'r', encoding='utf8') as f:
             for line in f:
                 if line.startswith("rpcuser="):
                     assert user is None  # Ensure that there is only one rpcuser line
@@ -556,7 +556,7 @@ def find_vout_for_address(node, txid, addr):
             return i
     raise RuntimeError("Vout not found for address: txid=%s, addr=%s" % (txid, addr))
 
-### quirkturt specific utils ###
+### quirkyturt specific utils ###
 vZC_DENOMS = [1, 5, 10, 50, 100, 500, 1000, 5000]
 DEFAULT_FEE = 0.01
 SPORK_ACTIVATION_TIME = 1563253447

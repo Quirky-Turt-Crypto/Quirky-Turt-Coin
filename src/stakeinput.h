@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_STAKEINPUT_H
-#define quirkturt_STAKEINPUT_H
+#ifndef quirkyturt_STAKEINPUT_H
+#define quirkyturt_STAKEINPUT_H
 
 #include "chain.h"
 #include "streams.h"
@@ -55,4 +55,4 @@ public:
 };
 
 
-#endif //quirkturt_STAKEINPUT_H
+#endif //quirkyturt_STAKEINPUT_H

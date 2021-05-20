@@ -17,7 +17,7 @@ import os
 
 EXCLUDE = [
     # auto generated:
-    'src/qt/quirkturtstrings.cpp',
+    'src/qt/quirkyturtstrings.cpp',
     'src/chainparamsseeds.h',
     # other external copyrights:
     'src/tinyformat.h',
@@ -447,7 +447,7 @@ Usage:
     $ ./copyright_header.py update <base_directory>
 
 Arguments:
-    <base_directory> - The base directory of a quirkturt source code repository.
+    <base_directory> - The base directory of a quirkyturt source code repository.
 """
 
 def print_file_action_message(filename, action):

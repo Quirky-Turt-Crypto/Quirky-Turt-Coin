@@ -1,4 +1,4 @@
-Source: quirkturt
+Source: quirkyturt
 Section: utils
 Priority: optional
 Maintainer: Fuzzbawls <fuzzbawls@gmail.com>
@@ -28,15 +28,15 @@ Build-Depends: debhelper,
  libzmq3-dev,
  dh-systemd
 Standards-Version: 3.9.2
-Homepage: http://www.quirkturt.org
-Vcs-Git: git://github.com/quirkturt-Project/quirkturt.git
-Vcs-Browser: http://github.com/quirkturt-Project/quirkturt
+Homepage: http://www.quirkyturt.org
+Vcs-Git: git://github.com/quirkyturt-Project/quirkyturt.git
+Vcs-Browser: http://github.com/quirkyturt-Project/quirkyturt
 
-Package: quirkturtd
+Package: quirkyturtd
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- quirkturt is a free, open source peer-to-peer electronic cash system that
+ quirkyturt is a free, open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
@@ -45,14 +45,14 @@ Description: peer-to-peer network based digital currency - daemon
  Full transaction history is stored locally at each client.  This
  requires 18.5+ GB of space, slowly growing.
  .
- This package provides the daemon, quirkturtd, and the CLI tool
- quirkturt-cli to interact with the daemon.
+ This package provides the daemon, quirkyturtd, and the CLI tool
+ quirkyturt-cli to interact with the daemon.
 
-Package: quirkturt-qt
+Package: quirkyturt-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- quirkturt is a free, open source peer-to-peer electronic cash system that
+ quirkyturt is a free, open source peer-to-peer electronic cash system that
  is completely decentralized, without the need for a central server or
  trusted parties.  Users hold the crypto keys to their own money and
  transact directly with each other, with the help of a P2P network to
@@ -61,4 +61,4 @@ Description: peer-to-peer network based digital currency - Qt GUI
  Full transaction history is stored locally at each client.  This
  requires 18.5+ GB of space, slowly growing.
  .
- This package provides quirkturt-Qt, a GUI for quirkturt based on Qt.
+ This package provides quirkyturt-Qt, a GUI for quirkyturt based on Qt.

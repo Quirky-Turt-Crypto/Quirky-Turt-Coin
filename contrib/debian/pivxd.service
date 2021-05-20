@@ -1,23 +1,23 @@
 # It is not recommended to modify this file in-place, because it will
 # be overwritten during package upgrades. If you want to add further
 # options or overwrite existing ones then use
-# $ systemctl edit quirkturtd.service
+# $ systemctl edit quirkyturtd.service
 # See "man systemd.service" for details.
 
 # Note that almost all daemon options could be specified in
-# /etc/quirkturt/quirkturt.conf
+# /etc/quirkyturt/quirkyturt.conf
 
 [Unit]
-Description=quirkturt daemon
+Description=quirkyturt daemon
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/quirkturtd -daemon -datadir=/var/lib/quirkturt -conf=/etc/quirkturt/quirkturt.conf -pid=/run/quirkturtd/quirkturtd.pid
-# Creates /run/quirkturtd owned by quirkturt
-RuntimeDirectory=quirkturtd
-User=quirkturt
+ExecStart=/usr/bin/quirkyturtd -daemon -datadir=/var/lib/quirkyturt -conf=/etc/quirkyturt/quirkyturt.conf -pid=/run/quirkyturtd/quirkyturtd.pid
+# Creates /run/quirkyturtd owned by quirkyturt
+RuntimeDirectory=quirkyturtd
+User=quirkyturt
 Type=forking
-PIDFile=/run/quirkturtd/quirkturtd.pid
+PIDFile=/run/quirkyturtd/quirkyturtd.pid
 Restart=on-failure
 
 # Hardening measures

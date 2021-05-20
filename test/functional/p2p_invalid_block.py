@@ -15,10 +15,10 @@ import copy
 from test_framework.blocktools import create_block, create_coinbase, create_transaction
 from test_framework.messages import COIN
 from test_framework.mininode import network_thread_start, P2PDataStore
-from test_framework.test_framework import quirkturtTestFramework
+from test_framework.test_framework import quirkyturtTestFramework
 from test_framework.util import assert_equal
 
-class InvalidBlockRequestTest(quirkturtTestFramework):
+class InvalidBlockRequestTest(quirkyturtTestFramework):
     def set_test_params(self):
         self.num_nodes = 1
         self.setup_clean_chain = True

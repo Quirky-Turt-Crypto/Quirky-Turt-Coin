@@ -14,7 +14,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"io.quirkturt.quirkturt-Qt";
+        return @"io.quirkyturt.quirkyturt-Qt";
     } else {
         return [self __bundleIdentifier];
     }

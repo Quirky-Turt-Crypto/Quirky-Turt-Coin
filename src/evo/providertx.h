@@ -1,9 +1,9 @@
 // Copyright (c) 2018-2021 The Dash Core developers
-// Copyright (c) 2021 The quirkturt Core developers
+// Copyright (c) 2021 The quirkyturt Core developers
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_PROVIDERTX_H
-#define quirkturt_PROVIDERTX_H
+#ifndef quirkyturt_PROVIDERTX_H
+#define quirkyturt_PROVIDERTX_H
 
 #include "primitives/transaction.h"
 #include "consensus/validation.h"
@@ -70,4 +70,4 @@ public:
 
 bool CheckProRegTx(const CTransaction& tx, const CBlockIndex* pindexPrev, CValidationState& state);
 
-#endif  //quirkturt_PROVIDERTX_H
+#endif  //quirkyturt_PROVIDERTX_H

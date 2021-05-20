@@ -4,13 +4,13 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-from test_framework.test_framework import quirkturtTestFramework
+from test_framework.test_framework import quirkyturtTestFramework
 from test_framework.util import *
 
 from decimal import Decimal
 
 # Test wallet change address behaviour
-class WalletChangeAddressesTest(quirkturtTestFramework):
+class WalletChangeAddressesTest(quirkyturtTestFramework):
 
     def set_test_params(self):
         self.num_nodes = 2

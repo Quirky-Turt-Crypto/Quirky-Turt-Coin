@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_CSPORKDB_H
-#define quirkturt_CSPORKDB_H
+#ifndef quirkyturt_CSPORKDB_H
+#define quirkyturt_CSPORKDB_H
 
 #include "fs.h"
 #include "dbwrapper.h"
@@ -25,4 +25,4 @@ public:
 };
 
 
-#endif //quirkturt_CSPORKDB_H
+#endif //quirkyturt_CSPORKDB_H

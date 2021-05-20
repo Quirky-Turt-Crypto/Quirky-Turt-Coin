@@ -5,12 +5,12 @@
 """Test the blocksdir option.
 """
 
-from test_framework.test_framework import quirkturtTestFramework, initialize_datadir
+from test_framework.test_framework import quirkyturtTestFramework, initialize_datadir
 
 import shutil
 import os
 
-class BlocksdirTest(quirkturtTestFramework):
+class BlocksdirTest(quirkyturtTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1

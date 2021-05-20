@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_KEY_IO_H
-#define quirkturt_KEY_IO_H
+#ifndef quirkyturt_KEY_IO_H
+#define quirkyturt_KEY_IO_H
 
 #include "chainparams.h"
 #include "key.h"
@@ -28,4 +28,4 @@ namespace KeyIO {
 
 }
 
-#endif //quirkturt_KEY_IO_H
+#endif //quirkyturt_KEY_IO_H

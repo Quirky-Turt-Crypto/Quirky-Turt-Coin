@@ -488,7 +488,7 @@ void AddressTableModel::updateEntry(const QString& address,
     const QString& purpose,
     int status)
 {
-    // Update address book model from quirkturt core
+    // Update address book model from quirkyturt core
     priv->updateEntry(address, label, isMine, purpose, status);
 }
 

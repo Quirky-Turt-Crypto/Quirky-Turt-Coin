@@ -4,8 +4,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_PUBKEY_H
-#define quirkturt_PUBKEY_H
+#ifndef quirkyturt_PUBKEY_H
+#define quirkyturt_PUBKEY_H
 
 #include "hash.h"
 #include "serialize.h"
@@ -264,4 +264,4 @@ public:
     ~ECCVerifyHandle();
 };
 
-#endif // quirkturt_PUBKEY_H
+#endif // quirkyturt_PUBKEY_H

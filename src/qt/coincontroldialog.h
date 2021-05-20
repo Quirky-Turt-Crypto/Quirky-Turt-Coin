@@ -7,7 +7,7 @@
 #define BITCOIN_QT_COINCONTROLDIALOG_H
 
 #include "amount.h"
-#include "qt/quirkturt/snackbar.h"
+#include "qt/quirkyturt/snackbar.h"
 #include "optional.h"
 #include "uint256.h"
 

@@ -1,4 +1,4 @@
-dnl Copyright (c) 2018 The quirkturt Core developers
+dnl Copyright (c) 2018 The quirkyturt Core developers
 dnl Distributed under the MIT software license, see the accompanying
 dnl file COPYING or http://www.opensource.org/licenses/mit-license.php.
 

@@ -1,10 +1,10 @@
 
-## <summary>policy for quirkturt</summary>
+## <summary>policy for quirkyturt</summary>
 
 
 ########################################
 ## <summary>
-##	Transition to quirkturt.
+##	Transition to quirkyturt.
 ## </summary>
 ## <param name="domain">
 ## <summary>
@@ -12,19 +12,19 @@
 ## </summary>
 ## </param>
 #
-interface(`quirkturt_domtrans',`
+interface(`quirkyturt_domtrans',`
 	gen_require(`
-		type quirkturt_t, quirkturt_exec_t;
+		type quirkyturt_t, quirkyturt_exec_t;
 	')
 
 	corecmd_search_bin($1)
-	domtrans_pattern($1, quirkturt_exec_t, quirkturt_t)
+	domtrans_pattern($1, quirkyturt_exec_t, quirkyturt_t)
 ')
 
 
 ########################################
 ## <summary>
-##	Execute quirkturt server in the quirkturt domain.
+##	Execute quirkyturt server in the quirkyturt domain.
 ## </summary>
 ## <param name="domain">
 ##	<summary>
@@ -32,18 +32,18 @@ interface(`quirkturt_domtrans',`
 ##	</summary>
 ## </param>
 #
-interface(`quirkturt_initrc_domtrans',`
+interface(`quirkyturt_initrc_domtrans',`
 	gen_require(`
-		type quirkturt_initrc_exec_t;
+		type quirkyturt_initrc_exec_t;
 	')
 
-	init_labeled_script_domtrans($1, quirkturt_initrc_exec_t)
+	init_labeled_script_domtrans($1, quirkyturt_initrc_exec_t)
 ')
 
 
 ########################################
 ## <summary>
-##	Search quirkturt lib directories.
+##	Search quirkyturt lib directories.
 ## </summary>
 ## <param name="domain">
 ##	<summary>
@@ -51,18 +51,18 @@ interface(`quirkturt_initrc_domtrans',`
 ##	</summary>
 ## </param>
 #
-interface(`quirkturt_search_lib',`
+interface(`quirkyturt_search_lib',`
 	gen_require(`
-		type quirkturt_var_lib_t;
+		type quirkyturt_var_lib_t;
 	')
 
-	allow $1 quirkturt_var_lib_t:dir search_dir_perms;
+	allow $1 quirkyturt_var_lib_t:dir search_dir_perms;
 	files_search_var_lib($1)
 ')
 
 ########################################
 ## <summary>
-##	Read quirkturt lib files.
+##	Read quirkyturt lib files.
 ## </summary>
 ## <param name="domain">
 ##	<summary>
@@ -70,18 +70,18 @@ interface(`quirkturt_search_lib',`
 ##	</summary>
 ## </param>
 #
-interface(`quirkturt_read_lib_files',`
+interface(`quirkyturt_read_lib_files',`
 	gen_require(`
-		type quirkturt_var_lib_t;
+		type quirkyturt_var_lib_t;
 	')
 
 	files_search_var_lib($1)
-	read_files_pattern($1, quirkturt_var_lib_t, quirkturt_var_lib_t)
+	read_files_pattern($1, quirkyturt_var_lib_t, quirkyturt_var_lib_t)
 ')
 
 ########################################
 ## <summary>
-##	Manage quirkturt lib files.
+##	Manage quirkyturt lib files.
 ## </summary>
 ## <param name="domain">
 ##	<summary>
@@ -89,18 +89,18 @@ interface(`quirkturt_read_lib_files',`
 ##	</summary>
 ## </param>
 #
-interface(`quirkturt_manage_lib_files',`
+interface(`quirkyturt_manage_lib_files',`
 	gen_require(`
-		type quirkturt_var_lib_t;
+		type quirkyturt_var_lib_t;
 	')
 
 	files_search_var_lib($1)
-	manage_files_pattern($1, quirkturt_var_lib_t, quirkturt_var_lib_t)
+	manage_files_pattern($1, quirkyturt_var_lib_t, quirkyturt_var_lib_t)
 ')
 
 ########################################
 ## <summary>
-##	Manage quirkturt lib directories.
+##	Manage quirkyturt lib directories.
 ## </summary>
 ## <param name="domain">
 ##	<summary>
@@ -108,20 +108,20 @@ interface(`quirkturt_manage_lib_files',`
 ##	</summary>
 ## </param>
 #
-interface(`quirkturt_manage_lib_dirs',`
+interface(`quirkyturt_manage_lib_dirs',`
 	gen_require(`
-		type quirkturt_var_lib_t;
+		type quirkyturt_var_lib_t;
 	')
 
 	files_search_var_lib($1)
-	manage_dirs_pattern($1, quirkturt_var_lib_t, quirkturt_var_lib_t)
+	manage_dirs_pattern($1, quirkyturt_var_lib_t, quirkyturt_var_lib_t)
 ')
 
 
 ########################################
 ## <summary>
 ##	All of the rules required to administrate
-##	a quirkturt environment
+##	a quirkyturt environment
 ## </summary>
 ## <param name="domain">
 ##	<summary>
@@ -135,23 +135,23 @@ interface(`quirkturt_manage_lib_dirs',`
 ## </param>
 ## <rolecap/>
 #
-interface(`quirkturt_admin',`
+interface(`quirkyturt_admin',`
 	gen_require(`
-		type quirkturt_t;
-		type quirkturt_initrc_exec_t;
-		type quirkturt_var_lib_t;
+		type quirkyturt_t;
+		type quirkyturt_initrc_exec_t;
+		type quirkyturt_var_lib_t;
 	')
 
-	allow $1 quirkturt_t:process { ptrace signal_perms };
-	ps_process_pattern($1, quirkturt_t)
+	allow $1 quirkyturt_t:process { ptrace signal_perms };
+	ps_process_pattern($1, quirkyturt_t)
 
-	quirkturt_initrc_domtrans($1)
+	quirkyturt_initrc_domtrans($1)
 	domain_system_change_exemption($1)
-	role_transition $2 quirkturt_initrc_exec_t system_r;
+	role_transition $2 quirkyturt_initrc_exec_t system_r;
 	allow $2 system_r;
 
 	files_search_var_lib($1)
-	admin_pattern($1, quirkturt_var_lib_t)
+	admin_pattern($1, quirkyturt_var_lib_t)
 
 ')
 

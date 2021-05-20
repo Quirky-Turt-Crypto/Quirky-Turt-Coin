@@ -117,11 +117,11 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += quirkturtd
+  bin_PROGRAMS += quirkyturtd
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += quirkturt-cli quirkturt-tx
+  bin_PROGRAMS += quirkyturt-cli quirkyturt-tx
 endif
 
 LIBSAPLING_H = \
@@ -143,7 +143,7 @@ LIBSAPLING_H = \
   sapling/sapling_operation.h
 
 .PHONY: FORCE cargo-build check-symbols check-security
-# quirkturt core #
+# quirkyturt core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   addrdb.h \
@@ -314,7 +314,7 @@ obj/build.h: FORCE
 	  "$(abs_top_srcdir)"
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between quirkturtd and quirkturt-qt
+# server: shared between quirkyturtd and quirkyturt-qt
 libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_server_a_SOURCES = \
@@ -380,7 +380,7 @@ libbitcoin_zmq_a_SOURCES = \
   zmq/zmqpublishnotifier.cpp
 endif
 
-# wallet: shared between quirkturtd and quirkturt-qt, but only linked
+# wallet: shared between quirkyturtd and quirkyturt-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -485,7 +485,7 @@ libzerocoin_libbitcoin_zerocoin_a_SOURCES = \
   libzerocoin/Params.cpp \
   zqrtc/zqrtcmodule.cpp
 
-# common: shared between quirkturtd, and quirkturt-qt and non-server tools
+# common: shared between quirkyturtd, and quirkyturt-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -584,7 +584,7 @@ libsapling_a_SOURCES += compat/glibc_compat.cpp
 AM_LDFLAGS += $(COMPAT_LDFLAGS)
 endif
 
-# cli: shared between quirkturt-cli and quirkturt-qt
+# cli: shared between quirkyturt-cli and quirkyturt-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -595,16 +595,16 @@ libbitcoin_cli_a_SOURCES = \
 nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# quirkturtd binary #
-quirkturtd_SOURCES = quirkturtd.cpp
-quirkturtd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-quirkturtd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-quirkturtd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# quirkyturtd binary #
+quirkyturtd_SOURCES = quirkyturtd.cpp
+quirkyturtd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+quirkyturtd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+quirkyturtd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-quirkturtd_SOURCES += quirkturtd-res.rc
+quirkyturtd_SOURCES += quirkyturtd-res.rc
 endif
-quirkturtd_LDADD = \
+quirkyturtd_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_COMMON) \
@@ -621,19 +621,19 @@ quirkturtd_LDADD = \
   $(LIBRUSTZCASH) \
   $(LIBZCASH_LIBS)
 
-quirkturtd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+quirkyturtd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
-# quirkturt-cli binary #
-quirkturt_cli_SOURCES = quirkturt-cli.cpp
-quirkturt_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-quirkturt_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-quirkturt_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# quirkyturt-cli binary #
+quirkyturt_cli_SOURCES = quirkyturt-cli.cpp
+quirkyturt_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+quirkyturt_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+quirkyturt_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-quirkturt_cli_SOURCES += quirkturt-cli-res.rc
+quirkyturt_cli_SOURCES += quirkyturt-cli-res.rc
 endif
 
-quirkturt_cli_LDADD = \
+quirkyturt_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
@@ -642,20 +642,20 @@ quirkturt_cli_LDADD = \
   $(LIBRUSTZCASH) \
   $(LIBZCASH_LIBS)
 
-quirkturt_cli_LDADD += $(BOOST_LIBS) $(EVENT_LIBS)
+quirkyturt_cli_LDADD += $(BOOST_LIBS) $(EVENT_LIBS)
 #
 
-# quirkturt-tx binary #
-quirkturt_tx_SOURCES = quirkturt-tx.cpp
-quirkturt_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-quirkturt_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-quirkturt_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# quirkyturt-tx binary #
+quirkyturt_tx_SOURCES = quirkyturt-tx.cpp
+quirkyturt_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+quirkyturt_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+quirkyturt_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-quirkturt_tx_SOURCES += quirkturt-tx-res.rc
+quirkyturt_tx_SOURCES += quirkyturt-tx-res.rc
 endif
 
-quirkturt_tx_LDADD = \
+quirkyturt_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_ZEROCOIN) \
@@ -666,7 +666,7 @@ quirkturt_tx_LDADD = \
   $(LIBRUSTZCASH) \
   $(LIBZCASH_LIBS)
 
-quirkturt_tx_LDADD += $(BOOST_LIBS)
+quirkyturt_tx_LDADD += $(BOOST_LIBS)
 #
 
 # bitcoinconsensus library #
@@ -738,12 +738,12 @@ EXTRA_DIST = $(CTAES_DIST) rust
 EXTRA_DIST += $(IMMER_DIST)
 
 
-config/quirkturt-config.h: config/stamp-h1
+config/quirkyturt-config.h: config/stamp-h1
 	@$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-config/stamp-h1: $(top_srcdir)/$(subdir)/config/quirkturt-config.h.in $(top_builddir)/config.status
+config/stamp-h1: $(top_srcdir)/$(subdir)/config/quirkyturt-config.h.in $(top_builddir)/config.status
 	$(AM_V_at)$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-$(top_srcdir)/$(subdir)/config/quirkturt-config.h.in:  $(am__configure_deps)
-	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/quirkturt-config.h.in
+$(top_srcdir)/$(subdir)/config/quirkyturt-config.h.in:  $(am__configure_deps)
+	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/quirkyturt-config.h.in
 
 clean-local:
 	-$(MAKE) -C secp256k1 clean

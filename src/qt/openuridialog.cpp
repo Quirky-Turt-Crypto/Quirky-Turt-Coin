@@ -7,7 +7,7 @@
 
 #include "guiutil.h"
 #include "walletmodel.h"
-#include "qt/quirkturt/qtutils.h"
+#include "qt/quirkyturt/qtutils.h"
 
 #include <QUrl>
 #include <QFile>
@@ -17,7 +17,7 @@ OpenURIDialog::OpenURIDialog(QWidget* parent) : QDialog(parent, Qt::WindowSystem
 {
     ui->setupUi(this);
     this->setStyleSheet(parent->styleSheet());
-    ui->uriEdit->setPlaceholderText("quirkturt:");
+    ui->uriEdit->setPlaceholderText("quirkyturt:");
 
     ui->labelSubtitle->setText("URI");
     setCssProperty(ui->labelSubtitle, "text-title2-dialog");

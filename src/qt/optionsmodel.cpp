@@ -5,7 +5,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/quirkturt-config.h"
+#include "config/quirkyturt-config.h"
 #endif
 
 #include "optionsmodel.h"
@@ -188,8 +188,8 @@ void OptionsModel::setDisplayDefaultOptions(QSettings& settings, bool reset)
     if (!gArgs.SoftSetArg("-lang", settings.value("language").toString().toStdString()))
         addOverriddenOption("-lang");
 
-    if (settings.contains("nAnonymizequirkturtAmount") || reset)
-        gArgs.SoftSetArg("-anonymizequirkturtamount", settings.value("nAnonymizequirkturtAmount").toString().toStdString());
+    if (settings.contains("nAnonymizequirkyturtAmount") || reset)
+        gArgs.SoftSetArg("-anonymizequirkyturtamount", settings.value("nAnonymizequirkyturtAmount").toString().toStdString());
 
     if (!settings.contains("strThirdPartyTxUrls") || reset)
         settings.setValue("strThirdPartyTxUrls", "");
@@ -208,7 +208,7 @@ void OptionsModel::Reset()
 
     // Remove all entries from our QSettings object
     settings.clear();
-    resetSettings = true; // Needed in quirkturt.cpp during shotdown to also remove the window positions
+    resetSettings = true; // Needed in quirkyturt.cpp during shotdown to also remove the window positions
 
     // default setting for OptionsModel::StartAtStartup - disabled
     if (GUIUtil::GetStartOnSystemStartup())

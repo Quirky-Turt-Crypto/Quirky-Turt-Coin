@@ -4,7 +4,7 @@
 
 #include "hash.h"
 #include "utilstrencodings.h"
-#include "test/test_quirkturt.h"
+#include "test/test_quirkyturt.h"
 
 #include <vector>
 

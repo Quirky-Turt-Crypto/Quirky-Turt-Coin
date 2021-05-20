@@ -1,15 +1,15 @@
 
 #!/bin/sh
 
-# setup quirkturt account, homedir etc
+# setup quirkyturt account, homedir etc
 
 set -e
 
-BCUSER="quirkturt"
-BCHOME="/var/lib/quirkturt"
+BCUSER="quirkyturt"
+BCHOME="/var/lib/quirkyturt"
 
 if [ "$1" = "configure" ]; then
-	# Add quirkturt user/group - this will gracefully abort if the user already exists.
+	# Add quirkyturt user/group - this will gracefully abort if the user already exists.
 	# A homedir is never created.
 	set +e
 	adduser --system --home "${BCHOME}" --no-create-home --group "${BCUSER}" 2>/dev/null

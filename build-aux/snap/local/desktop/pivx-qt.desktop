@@ -2,14 +2,14 @@
 
 [Desktop Entry]
 Encoding=UTF-8
-Name=quirkturt Core
-Comment=quirkturt Core QT main network
-GenericName=quirkturt Digital Currency QT client main network
-Exec=quirkturt-core.qt %u
+Name=quirkyturt Core
+Comment=quirkyturt Core QT main network
+GenericName=quirkyturt Digital Currency QT client main network
+Exec=quirkyturt-core.qt %u
 Terminal=false
 Type=Application
-Icon=${SNAP}/share/pixmaps/quirkturt.png
-MimeType=x-scheme-handler/quirkturt;
+Icon=${SNAP}/share/pixmaps/quirkyturt.png
+MimeType=x-scheme-handler/quirkyturt;
 Categories=X-Office;X-Finance;
-Keywords=internet;quirkturt;zqrtc;qrtc;core;wallet;qt;main;snap;launchpad;crypto;digital;currency;coin;token;zerocoin;
+Keywords=internet;quirkyturt;zqrtc;qrtc;core;wallet;qt;main;snap;launchpad;crypto;digital;currency;coin;token;zerocoin;
 Version=1.0

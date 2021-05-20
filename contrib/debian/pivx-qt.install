@@ -1,6 +1,6 @@
-usr/local/bin/quirkturt-qt usr/bin
-share/pixmaps/quirkturt32.xpm usr/share/pixmaps
-share/pixmaps/quirkturt16.xpm usr/share/pixmaps
-share/pixmaps/quirkturt128.png usr/share/pixmaps
-debian/quirkturt-qt.desktop usr/share/applications
-debian/quirkturt-qt.protocol usr/share/kde4/services/
+usr/local/bin/quirkyturt-qt usr/bin
+share/pixmaps/quirkyturt32.xpm usr/share/pixmaps
+share/pixmaps/quirkyturt16.xpm usr/share/pixmaps
+share/pixmaps/quirkyturt128.png usr/share/pixmaps
+debian/quirkyturt-qt.desktop usr/share/applications
+debian/quirkyturt-qt.protocol usr/share/kde4/services/

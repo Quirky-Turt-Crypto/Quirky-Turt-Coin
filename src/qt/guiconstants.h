@@ -13,7 +13,7 @@ static const int MODEL_UPDATE_DELAY = 1000;
 /* AskPassphraseDialog -- Maximum passphrase length */
 static const int MAX_PASSPHRASE_SIZE = 1024;
 
-/* quirkturt GUI -- Size of icons in status bar */
+/* quirkyturt GUI -- Size of icons in status bar */
 static const int STATUSBAR_ICONSIZE = 16;
 
 static const bool DEFAULT_SPLASHSCREEN = true;
@@ -49,9 +49,9 @@ static const int MAX_URI_LENGTH = 255;
 #define EXPORT_IMAGE_SIZE 256
 
 
-#define QAPP_ORG_NAME "quirkturt"
-#define QAPP_ORG_DOMAIN "quirkturt.org"
-#define QAPP_APP_NAME_DEFAULT "quirkturt-Qt"
-#define QAPP_APP_NAME_TESTNET "quirkturt-Qt-testnet"
+#define QAPP_ORG_NAME "quirkyturt"
+#define QAPP_ORG_DOMAIN "quirkyturt.org"
+#define QAPP_APP_NAME_DEFAULT "quirkyturt-Qt"
+#define QAPP_APP_NAME_TESTNET "quirkyturt-Qt-testnet"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H

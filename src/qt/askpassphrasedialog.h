@@ -7,12 +7,12 @@
 #define BITCOIN_QT_ASKPASSPHRASEDIALOG_H
 
 #include <QDialog>
-#include "qt/quirkturt/prunnable.h"
+#include "qt/quirkyturt/prunnable.h"
 #include "support/allocators/secure.h"
 #include <QCheckBox>
 
 class WalletModel;
-class quirkturtGUI;
+class quirkyturtGUI;
 
 namespace Ui
 {

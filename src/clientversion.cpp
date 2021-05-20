@@ -10,10 +10,10 @@
 
 /**
  * Name of client reported in the 'version' message. Report the same name
- * for both quirkturtd and quirkturt-qt, to make it harder for attackers to
+ * for both quirkyturtd and quirkyturt-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("quirkturt Core");
+const std::string CLIENT_NAME("quirkyturt Core");
 
 /**
  * Client version number

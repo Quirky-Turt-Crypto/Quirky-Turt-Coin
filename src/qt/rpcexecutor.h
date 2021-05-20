@@ -3,8 +3,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_QT_RPCEXECUTOR_H
-#define quirkturt_QT_RPCEXECUTOR_H
+#ifndef quirkyturt_QT_RPCEXECUTOR_H
+#define quirkyturt_QT_RPCEXECUTOR_H
 
 #include "rpc/server.h"
 
@@ -75,4 +75,4 @@ public:
 };
 
 
-#endif // quirkturt_QT_RPCEXECUTOR_H
+#endif // quirkyturt_QT_RPCEXECUTOR_H

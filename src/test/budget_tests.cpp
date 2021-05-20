@@ -2,7 +2,7 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "test_quirkturt.h"
+#include "test_quirkyturt.h"
 
 #include "budget/budgetmanager.h"
 #include "masternode-payments.h"

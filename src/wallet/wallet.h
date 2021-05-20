@@ -5,8 +5,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_WALLET_H
-#define quirkturt_WALLET_H
+#ifndef quirkyturt_WALLET_H
+#define quirkyturt_WALLET_H
 
 #include "addressbook.h"
 #include "amount.h"
@@ -106,7 +106,7 @@ enum WalletFeature {
     FEATURE_WALLETCRYPT = 40000, // wallet encryption
     FEATURE_COMPRPUBKEY = 60000, // compressed public keys
 
-    FEATURE_PRE_quirkturt = 61000, // inherited version..
+    FEATURE_PRE_quirkyturt = 61000, // inherited version..
 
     // The following features were implemented in BTC but not in our wallet, we can simply skip them.
     // FEATURE_HD = 130000,  Hierarchical key derivation after BIP32 (HD Wallet)
@@ -1270,4 +1270,4 @@ public:
 // !TODO: move to wallet/init.*
 bool InitAutoBackupWallet();
 
-#endif // quirkturt_WALLET_H
+#endif // quirkyturt_WALLET_H

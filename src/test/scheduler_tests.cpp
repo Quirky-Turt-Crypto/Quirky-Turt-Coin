@@ -6,7 +6,7 @@
 #include "random.h"
 #include "scheduler.h"
 #if defined(HAVE_CONFIG_H)
-#include "config/quirkturt-config.h"
+#include "config/quirkyturt-config.h"
 #endif
 
 #include <boost/random/mersenne_twister.hpp>

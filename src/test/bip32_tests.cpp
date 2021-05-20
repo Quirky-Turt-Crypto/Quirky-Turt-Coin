@@ -7,7 +7,7 @@
 
 #include "key.h"
 #include "key_io.h"
-#include "test/test_quirkturt.h"
+#include "test/test_quirkyturt.h"
 
 #include <string>
 #include <vector>

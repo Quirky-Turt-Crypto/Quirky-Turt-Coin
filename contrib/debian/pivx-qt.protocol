@@ -1,6 +1,6 @@
 [Protocol]
-exec=quirkturt-qt '%u'
-protocol=quirkturt
+exec=quirkyturt-qt '%u'
+protocol=quirkyturt
 input=none
 output=none
 helper=true

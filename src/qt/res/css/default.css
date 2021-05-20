@@ -881,12 +881,12 @@ QDialog#HelpMessageDialog QScrollBar:vertical, QDialog#HelpMessageDialog QScroll
 border:0;
 }
 
-/* About quirkturt Dialog */
-QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About quirkturt Contents */
+/* About quirkyturt Dialog */
+QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About quirkyturt Contents */
 margin-left:10px;
 }
 
-QDialog#AboutDialog QLabel#label_2 { /* Margin for About quirkturt text */
+QDialog#AboutDialog QLabel#label_2 { /* Margin for About quirkyturt text */
 margin-right:10px;
 }
 
@@ -913,11 +913,11 @@ background-color:#ffffff;
 
 QLabel#labelOverviewHeaderRight {
 qproperty-alignment: 'AlignVCenter | AlignRight';
-background-image: url(':/images/quirkturt_logo_horizontal');
+background-image: url(':/images/quirkyturt_logo_horizontal');
 background-repeat: no-repeat;
 }
 
-QWidget .QFrame#frame_Header { /* Header with Page-Title and quirkturt-image */
+QWidget .QFrame#frame_Header { /* Header with Page-Title and quirkyturt-image */
 min-width:400px;
 background-color:#ffffff;
 }

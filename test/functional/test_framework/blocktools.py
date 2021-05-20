@@ -101,7 +101,7 @@ def get_legacy_sigopcount_tx(tx, fAccurate=True):
         count += CScript(j.scriptSig).GetSigOpCount(fAccurate)
     return count
 
-### quirkturt specific blocktools ###
+### quirkyturt specific blocktools ###
 def create_coinbase_pos(height):
     coinbase = CTransaction()
     coinbase.vin = [CTxIn(NullOutPoint, script_BIP34_coinbase_height(height), 0xffffffff)]
