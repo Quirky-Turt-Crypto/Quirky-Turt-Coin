@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_LEGACY_ZPOS_H
-#define quirkturt_LEGACY_ZPOS_H
+#ifndef quirkyturt_LEGACY_ZPOS_H
+#define quirkyturt_LEGACY_ZPOS_H
 
 #include "stakeinput.h"
 #include "txdb.h"
@@ -29,4 +29,4 @@ public:
     virtual bool ContextCheck(int nHeight, uint32_t nTime) override;
 };
 
-#endif //quirkturt_LEGACY_ZPOS_H
+#endif //quirkyturt_LEGACY_ZPOS_H

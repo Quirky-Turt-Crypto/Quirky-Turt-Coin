@@ -44,11 +44,11 @@ QString BitcoinUnits::id(int unit)
 {
     switch (unit) {
     case QRTC:
-        return QString("quirkturt");
+        return QString("quirkyturt");
     case mQRTC:
-        return QString("mquirkturt");
+        return QString("mquirkyturt");
     case uQRTC:
-        return QString::fromUtf8("uquirkturt");
+        return QString::fromUtf8("uquirkyturt");
     default:
         return QString("???");
     }

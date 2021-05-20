@@ -47,7 +47,7 @@ void CSporkManager::Clear()
     mapSporksActive.clear();
 }
 
-// quirkturt: on startup load spork values from previous session if they exist in the sporkDB
+// quirkyturt: on startup load spork values from previous session if they exist in the sporkDB
 void CSporkManager::LoadSporksFromDB()
 {
     for (const auto& sporkDef : sporkDefs) {
@@ -175,7 +175,7 @@ int CSporkManager::ProcessSporkMsg(CSporkMessage& spork)
     AddOrUpdateSporkMessage(spork);
     spork.Relay();
 
-    // quirkturt: add to spork database.
+    // quirkyturt: add to spork database.
     pSporkDB->WriteSpork(spork.nSporkID, spork);
     // All good.
     return 0;

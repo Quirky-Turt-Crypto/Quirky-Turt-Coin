@@ -10,7 +10,7 @@
 #include "sync.h"
 #include "utilstrencodings.h"
 #include "utilmoneystr.h"
-#include "test/test_quirkturt.h"
+#include "test/test_quirkyturt.h"
 
 #include <stdint.h>
 #include <vector>
@@ -944,7 +944,7 @@ BOOST_AUTO_TEST_CASE(test_ToUpper)
 BOOST_AUTO_TEST_CASE(test_Capitalize)
 {
     BOOST_CHECK_EQUAL(Capitalize(""), "");
-    BOOST_CHECK_EQUAL(Capitalize("quirkturt"), "quirkturt");
+    BOOST_CHECK_EQUAL(Capitalize("quirkyturt"), "quirkyturt");
     BOOST_CHECK_EQUAL(Capitalize("\x00\xfe\xff"), "\x00\xfe\xff");
 }
 

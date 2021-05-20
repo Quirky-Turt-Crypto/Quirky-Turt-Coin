@@ -65,7 +65,7 @@
 
 
 #if defined(NDEBUG)
-#error "quirkturt cannot be compiled without assertions."
+#error "quirkyturt cannot be compiled without assertions."
 #endif
 
 /**
@@ -1460,7 +1460,7 @@ static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck()
 {
-    util::ThreadRename("quirkturt-scriptch");
+    util::ThreadRename("quirkyturt-scriptch");
     scriptcheckqueue.Thread();
 }
 
@@ -2848,7 +2848,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW, bo
         }
         nHeight = pindexPrev->nHeight + 1;
 
-        // quirkturt
+        // quirkyturt
         // It is entierly possible that we don't have enough data and this could fail
         // (i.e. the block could indeed be valid). Store the block for later consideration
         // but issue an initial reject message.
@@ -2938,11 +2938,11 @@ bool CheckWork(const CBlock& block, const CBlockIndex* const pindexPrev)
     }
 
     if (block.nBits != nBitsRequired) {
-        // quirkturt Specific reference to the block with the wrong threshold was used.
+        // quirkyturt Specific reference to the block with the wrong threshold was used.
         const Consensus::Params& consensus = Params().GetConsensus();
-        if ((block.nTime == (uint32_t) consensus.nquirkturtBadBlockTime) &&
-                (block.nBits == (uint32_t) consensus.nquirkturtBadBlockBits)) {
-            // accept quirkturt block minted with incorrect proof of work threshold
+        if ((block.nTime == (uint32_t) consensus.nquirkyturtBadBlockTime) &&
+                (block.nBits == (uint32_t) consensus.nquirkyturtBadBlockBits)) {
+            // accept quirkyturt block minted with incorrect proof of work threshold
             return true;
         }
 

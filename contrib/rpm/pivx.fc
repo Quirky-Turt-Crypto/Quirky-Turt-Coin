@@ -1,8 +1,8 @@
-/usr/bin/quirkturt-cli		--	gen_context(system_u:object_r:quirkturt_exec_t,s0)
-/usr/sbin/quirkturtd		--	gen_context(system_u:object_r:quirkturt_exec_t,s0)
-/usr/lib(64)?/quirkturt/quirkturtd		--	gen_context(system_u:object_r:quirkturt_exec_t,s0)
+/usr/bin/quirkyturt-cli		--	gen_context(system_u:object_r:quirkyturt_exec_t,s0)
+/usr/sbin/quirkyturtd		--	gen_context(system_u:object_r:quirkyturt_exec_t,s0)
+/usr/lib(64)?/quirkyturt/quirkyturtd		--	gen_context(system_u:object_r:quirkyturt_exec_t,s0)
 
-/etc/quirkturt(/.*)?		gen_context(system_u:object_r:quirkturt_conf_t,s0)
-/var/lib/quirkturt(/.*)?		gen_context(system_u:object_r:quirkturt_var_lib_t,s0)
+/etc/quirkyturt(/.*)?		gen_context(system_u:object_r:quirkyturt_conf_t,s0)
+/var/lib/quirkyturt(/.*)?		gen_context(system_u:object_r:quirkyturt_var_lib_t,s0)
 
-(/var)?/run/quirkturtd(/.*)?   gen_context(system_u:object_r:quirkturt_var_run_t,s0)
+(/var)?/run/quirkyturtd(/.*)?   gen_context(system_u:object_r:quirkyturt_var_run_t,s0)

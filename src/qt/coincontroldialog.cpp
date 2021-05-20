@@ -18,7 +18,7 @@
 #include "wallet/wallet.h"
 #include "walletmodel.h"
 
-#include "qt/quirkturt/qtutils.h"
+#include "qt/quirkyturt/qtutils.h"
 
 #include <QApplication>
 #include <QCheckBox>
@@ -686,7 +686,7 @@ void CoinControlDialog::loadAvailableCoin(bool treeMode,
     itemOutput->setFlags(flgCheckbox);
     itemOutput->setCheckState(COLUMN_CHECKBOX, Qt::Unchecked);
 
-    // if listMode or change => show quirkturt address. In tree mode, address is not shown again for direct wallet address outputs
+    // if listMode or change => show quirkyturt address. In tree mode, address is not shown again for direct wallet address outputs
     if (!treeMode) {
         itemOutput->setText(COLUMN_ADDRESS, sWalletAddress);
     }else {

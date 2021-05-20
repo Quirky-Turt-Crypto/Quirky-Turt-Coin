@@ -4,7 +4,7 @@
 
 #include "random.h"
 
-#include "test/test_quirkturt.h"
+#include "test/test_quirkyturt.h"
 
 #include <boost/test/unit_test.hpp>
 

@@ -5,7 +5,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifdef HAVE_CONFIG_H
-#include "config/quirkturt-config.h"
+#include "config/quirkyturt-config.h"
 #endif
 
 #include "netbase.h"

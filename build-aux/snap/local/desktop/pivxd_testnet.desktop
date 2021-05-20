@@ -2,14 +2,14 @@
 
 [Desktop Entry]
 Encoding=UTF-8
-Name=quirkturt Core Daemon SNAP
+Name=quirkyturt Core Daemon SNAP
 Comment=testnet
-GenericName=quirkturt Digital Currency Daemon Client testnet network
-Exec=quirkturt-core.daemon-testnet %u
+GenericName=quirkyturt Digital Currency Daemon Client testnet network
+Exec=quirkyturt-core.daemon-testnet %u
 Terminal=true
 Type=Application
-Icon=${SNAP}/share/pixmaps/quirkturt_testnet.png
+Icon=${SNAP}/share/pixmaps/quirkyturt_testnet.png
 MimeType=x-scheme-handler/qrtc;
 Categories=X-Office;X-Finance;
-Keywords=internet;quirkturt;zqrtc;core;wallet;daemon;testnet;snap;launchpad;crypto;digital;currency;coin;token;zerocoin;
+Keywords=internet;quirkyturt;zqrtc;core;wallet;daemon;testnet;snap;launchpad;crypto;digital;currency;coin;token;zerocoin;
 Version=1.0

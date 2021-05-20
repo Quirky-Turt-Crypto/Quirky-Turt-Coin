@@ -1,5 +1,5 @@
-quirkturt Core version v5.0.1 is now available from: https://github.com/quirkturt-project/quirkturt/releases
-Please report bugs using the issue tracker at github: https://github.com/quirkturt-project/quirkturt/issues
+quirkyturt Core version v5.0.1 is now available from: https://github.com/quirkyturt-project/quirkyturt/releases
+Please report bugs using the issue tracker at github: https://github.com/quirkyturt-project/quirkyturt/issues
 
 Mandatory Update
 ----

@@ -1,3 +1,3 @@
-usr/local/bin/quirkturtd usr/bin
-usr/local/bin/quirkturt-cli usr/bin
-debian/examples/quirkturt.conf etc/quirkturt
+usr/local/bin/quirkyturtd usr/bin
+usr/local/bin/quirkyturt-cli usr/bin
+debian/examples/quirkyturt.conf etc/quirkyturt

@@ -1,9 +1,9 @@
-// Copyright (c) 2020 The quirkturt Core developers
+// Copyright (c) 2020 The quirkyturt Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_SAPLINGSCRIPTPUBKEYMAN_H
-#define quirkturt_SAPLINGSCRIPTPUBKEYMAN_H
+#ifndef quirkyturt_SAPLINGSCRIPTPUBKEYMAN_H
+#define quirkyturt_SAPLINGSCRIPTPUBKEYMAN_H
 
 #include "consensus/consensus.h"
 #include "sapling/note.h"
@@ -423,4 +423,4 @@ private:
     TxNullifiers mapTxSaplingNullifiers;
 };
 
-#endif //quirkturt_SAPLINGSCRIPTPUBKEYMAN_H
+#endif //quirkyturt_SAPLINGSCRIPTPUBKEYMAN_H

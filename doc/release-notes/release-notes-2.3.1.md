@@ -1,23 +1,23 @@
-quirkturt Core version 2.3.1 is now available from:
+quirkyturt Core version 2.3.1 is now available from:
 
-  <https://github.com/quirkturt-project/quirkturt/releases>
+  <https://github.com/quirkyturt-project/quirkyturt/releases>
 
 This is a new minor version release, including various bug fixes and
 performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/quirkturt-project/quirkturt/issues>
+  <https://github.com/quirkyturt-project/quirkyturt/issues>
 
 How to Upgrade
 ==============
 
-If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/quirkturt-Qt (on Mac) or quirkturtd/quirkturt-qt (on Linux).
+If you are running an older version, shut it down. Wait until it has completely shut down (which might take a few minutes for older versions), then run the installer (on Windows) or just copy over /Applications/quirkyturt-Qt (on Mac) or quirkyturtd/quirkyturt-qt (on Linux).
 
 Compatibility
 ==============
 
-quirkturt Core is extensively tested on multiple operating systems using
+quirkyturt Core is extensively tested on multiple operating systems using
 the Linux kernel, macOS 10.8+, and Windows Vista and later.
 
 Microsoft ended support for Windows XP on [April 8th, 2014](https://www.microsoft.com/en-us/WindowsForBusiness/end-of-xp-support),
@@ -25,7 +25,7 @@ No attempt is made to prevent installing or running the software on Windows XP, 
 can still do so at your own risk but be aware that there are known instabilities and issues.
 Please do not report issues about Windows XP to the issue tracker.
 
-quirkturt Core should also work on most other Unix-like systems but is not
+quirkyturt Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 Notable Changes
@@ -98,7 +98,7 @@ Result: (for other sets):
 }
 
 Examples:
-> quirkturt-cli startmasternode "alias" true "my_mn"
+> quirkyturt-cli startmasternode "alias" true "my_mn"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "startmasternode", "params": ["alias" true "my_mn"] }' -H 'content-type: text/plain;' http://127.0.0.1:26023/
 ```
 
@@ -133,7 +133,7 @@ Result:
 }
 
 Examples:
-> quirkturt-cli mnbudgetvote "local" "ed2f83cedee59a91406f5f47ec4d60bf5a7f9ee6293913c82976bd2d3a658041" "yes"
+> quirkyturt-cli mnbudgetvote "local" "ed2f83cedee59a91406f5f47ec4d60bf5a7f9ee6293913c82976bd2d3a658041" "yes"
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "mnbudgetvote", "params": ["local" "ed2f83cedee59a91406f5f47ec4d60bf5a7f9ee6293913c82976bd2d3a658041" "yes"] }' -H 'content-type: text/plain;' http://127.0.0.1:26023/
 ```
 
@@ -159,7 +159,7 @@ Result:
     "BlockEnd": n,                (numeric) Proposal ending block
     "TotalPaymentCount": n,       (numeric) Number of payments
     "RemainingPaymentCount": n,   (numeric) Number of remaining payments
-    "PaymentAddress": "xxxx",     (string) quirkturt address of payment
+    "PaymentAddress": "xxxx",     (string) quirkyturt address of payment
     "Ratio": x.xxx,               (numeric) Ratio of yeas vs nays
     "Yeas": n,                    (numeric) Number of yea votes
     "Nays": n,                    (numeric) Number of nay votes
@@ -175,7 +175,7 @@ Result:
 ]
 
 Examples:
-> quirkturt-cli getbudgetinfo
+> quirkyturt-cli getbudgetinfo
 > curl --user myusername --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getbudgetinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:26023/
 ```
 
@@ -210,4 +210,4 @@ Thanks to everyone who directly contributed to this release:
 - Mrs-X
 - amirabrams
 
-As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/quirkturt-project-translations/).
+As well as everyone that helped translating on [Transifex](https://www.transifex.com/projects/p/quirkyturt-project-translations/).

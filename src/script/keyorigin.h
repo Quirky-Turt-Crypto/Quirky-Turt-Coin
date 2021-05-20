@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_SCRIPT_KEYORIGIN_H
-#define quirkturt_SCRIPT_KEYORIGIN_H
+#ifndef quirkyturt_SCRIPT_KEYORIGIN_H
+#define quirkyturt_SCRIPT_KEYORIGIN_H
 
 #include <serialize.h>
 #include <vector>
@@ -52,4 +52,4 @@ struct KeyOriginInfo
     }
 };
 
-#endif // quirkturt_SCRIPT_KEYORIGIN_H
+#endif // quirkyturt_SCRIPT_KEYORIGIN_H

@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_SAPLING_TRANSACTION_H
-#define quirkturt_SAPLING_TRANSACTION_H
+#ifndef quirkyturt_SAPLING_TRANSACTION_H
+#define quirkyturt_SAPLING_TRANSACTION_H
 
 #include "serialize.h"
 #include "streams.h"
@@ -160,4 +160,4 @@ public:
 };
 
 
-#endif //quirkturt_SAPLING_TRANSACTION_H
+#endif //quirkyturt_SAPLING_TRANSACTION_H

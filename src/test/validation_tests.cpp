@@ -2,7 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#include "test/test_quirkturt.h"
+#include "test/test_quirkyturt.h"
 #include "blockassembler.h"
 #include "consensus/merkle.h"
 #include "primitives/transaction.h"

@@ -3,9 +3,9 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#define BOOST_TEST_MODULE quirkturt Test Suite
+#define BOOST_TEST_MODULE quirkyturt Test Suite
 
-#include "test/test_quirkturt.h"
+#include "test/test_quirkyturt.h"
 
 #include "blockassembler.h"
 #include "guiinterface.h"
@@ -59,7 +59,7 @@ BasicTestingSetup::~BasicTestingSetup()
 TestingSetup::TestingSetup(const std::string& chainName) : BasicTestingSetup(chainName)
 {
         ClearDatadirCache();
-        pathTemp = fs::temp_directory_path() / strprintf("test_quirkturt_%lu_%i", (unsigned long)GetTime(), (int)(InsecureRandRange(100000)));
+        pathTemp = fs::temp_directory_path() / strprintf("test_quirkyturt_%lu_%i", (unsigned long)GetTime(), (int)(InsecureRandRange(100000)));
         fs::create_directories(pathTemp);
         gArgs.ForceSetArg("-datadir", pathTemp.string());
 

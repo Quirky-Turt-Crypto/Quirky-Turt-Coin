@@ -972,7 +972,7 @@ void ThreadCheckMasternodes()
     if (fLiteMode) return; //disable all Masternode related functionality
 
     // Make this thread recognisable as the wallet flushing thread
-    util::ThreadRename("quirkturt-masternodeman");
+    util::ThreadRename("quirkyturt-masternodeman");
     LogPrintf("Masternodes thread started\n");
 
     unsigned int c = 0;

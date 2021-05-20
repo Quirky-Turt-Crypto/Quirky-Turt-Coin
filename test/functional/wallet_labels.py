@@ -11,10 +11,10 @@ RPCs tested are:
 """
 from collections import defaultdict
 
-from test_framework.test_framework import quirkturtTestFramework
+from test_framework.test_framework import quirkyturtTestFramework
 from test_framework.util import assert_equal, assert_raises_rpc_error
 
-class WalletlabelsTest(quirkturtTestFramework):
+class WalletlabelsTest(quirkyturtTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1

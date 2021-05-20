@@ -4,11 +4,11 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_QT_WALLETMODEL_H
-#define quirkturt_QT_WALLETMODEL_H
+#ifndef quirkyturt_QT_WALLETMODEL_H
+#define quirkyturt_QT_WALLETMODEL_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/quirkturt-config.h"
+#include "config/quirkyturt-config.h"
 #endif
 
 #include "interfaces/wallet.h"
@@ -111,7 +111,7 @@ public:
     }
 };
 
-/** Interface to quirkturt wallet from Qt view code. */
+/** Interface to quirkyturt wallet from Qt view code. */
 class WalletModel : public QObject
 {
     Q_OBJECT
@@ -453,4 +453,4 @@ public Q_SLOTS:
     bool updateAddressBookLabels(const CWDestination& address, const std::string& strName, const std::string& strPurpose);
 };
 
-#endif // quirkturt_QT_WALLETMODEL_H
+#endif // quirkyturt_QT_WALLETMODEL_H

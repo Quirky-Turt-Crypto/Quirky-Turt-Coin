@@ -4,7 +4,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://www.opensource.org/licenses/mit-license.php .
 
-from test_framework.test_framework import quirkturtTestFramework
+from test_framework.test_framework import quirkyturtTestFramework
 from test_framework.util import (
     assert_equal,
     assert_raises_rpc_error,
@@ -19,7 +19,7 @@ from decimal import Decimal
 from time import sleep
 
 # Test wallet behaviour with Sapling addresses
-class WalletSaplingTest(quirkturtTestFramework):
+class WalletSaplingTest(quirkyturtTestFramework):
 
     def set_test_params(self):
         self.num_nodes = 4

@@ -251,11 +251,11 @@ UniValue stop(const JSONRPCRequest& jsonRequest)
     if (jsonRequest.fHelp || jsonRequest.params.size() > 1)
         throw std::runtime_error(
             "stop\n"
-            "\nStop quirkturt server.");
+            "\nStop quirkyturt server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "quirkturt server stopping";
+    return "quirkyturt server stopping";
 }
 
 
@@ -451,7 +451,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(std::string methodname, std::string args)
 {
-    return "> quirkturt-cli " + methodname + " " + args + "\n";
+    return "> quirkyturt-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(std::string methodname, std::string args)

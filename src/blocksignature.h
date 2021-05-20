@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_BLOCKSIGNATURE_H
-#define quirkturt_BLOCKSIGNATURE_H
+#ifndef quirkyturt_BLOCKSIGNATURE_H
+#define quirkyturt_BLOCKSIGNATURE_H
 
 #include "key.h"
 #include "primitives/block.h"
@@ -13,4 +13,4 @@ bool SignBlockWithKey(CBlock& block, const CKey& key);
 bool SignBlock(CBlock& block, const CKeyStore& keystore);
 bool CheckBlockSignature(const CBlock& block);
 
-#endif //quirkturt_BLOCKSIGNATURE_H
+#endif //quirkyturt_BLOCKSIGNATURE_H

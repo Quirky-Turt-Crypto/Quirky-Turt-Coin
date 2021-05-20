@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_HDCHAIN_H
-#define quirkturt_HDCHAIN_H
+#ifndef quirkyturt_HDCHAIN_H
+#define quirkyturt_HDCHAIN_H
 
 #include "key.h"
 
@@ -72,4 +72,4 @@ public:
     }
 };
 
-#endif // quirkturt_HDCHAIN_H
+#endif // quirkyturt_HDCHAIN_H

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_CYCLINGVECTOR_H
-#define quirkturt_CYCLINGVECTOR_H
+#ifndef quirkyturt_CYCLINGVECTOR_H
+#define quirkyturt_CYCLINGVECTOR_H
 
 #include <sync.h>
 #include <vector>
@@ -33,4 +33,4 @@ public:
     std::vector<T> GetCache() const { LOCK(cs); return vec; }
 };
 
-#endif // quirkturt_CYCLINGVECTOR_H
+#endif // quirkyturt_CYCLINGVECTOR_H

@@ -6,11 +6,11 @@
 
 from time import sleep
 
-from test_framework.test_framework import quirkturtTestFramework
+from test_framework.test_framework import quirkyturtTestFramework
 from test_framework.util import set_node_times, assert_equal
 
 
-class quirkturt_RPCSporkTest(quirkturtTestFramework):
+class quirkyturt_RPCSporkTest(quirkyturtTestFramework):
 
     def set_test_params(self):
         self.setup_clean_chain = True
@@ -71,5 +71,5 @@ class quirkturt_RPCSporkTest(quirkturtTestFramework):
 
 
 if __name__ == '__main__':
-    quirkturt_RPCSporkTest().main()
+    quirkyturt_RPCSporkTest().main()
 

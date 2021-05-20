@@ -5,8 +5,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_HASH_H
-#define quirkturt_HASH_H
+#ifndef quirkyturt_HASH_H
+#define quirkyturt_HASH_H
 
 #include "arith_uint256.h"
 #include "crypto/ripemd160.h"
@@ -505,5 +505,5 @@ public:
 uint64_t SipHashUint256(uint64_t k0, uint64_t k1, const uint256& val);
 uint64_t SipHashUint256Extra(uint64_t k0, uint64_t k1, const uint256& val, uint32_t extra);
 
-#endif // quirkturt_HASH_H
+#endif // quirkyturt_HASH_H
 

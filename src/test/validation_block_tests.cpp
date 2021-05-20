@@ -10,7 +10,7 @@
 #include "consensus/validation.h"
 #include "pow.h"
 #include "random.h"
-#include "test/test_quirkturt.h"
+#include "test/test_quirkyturt.h"
 #include "validation.h"
 #include "validationinterface.h"
 

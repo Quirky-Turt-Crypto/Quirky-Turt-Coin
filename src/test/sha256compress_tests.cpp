@@ -1,4 +1,4 @@
-#include "test/test_quirkturt.h"
+#include "test/test_quirkyturt.h"
 #include "crypto/sha256.h"
 #include "uint256.h"
 

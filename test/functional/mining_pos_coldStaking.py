@@ -9,9 +9,9 @@ from time import sleep
 
 from test_framework.messages import CTransaction, CTxIn, CTxOut, COIN, COutPoint
 from test_framework.mininode import network_thread_start
-from test_framework.quirkturt_node import quirkturtTestNode
+from test_framework.quirkyturt_node import quirkyturtTestNode
 from test_framework.script import CScript, OP_CHECKSIG
-from test_framework.test_framework import quirkturtTestFramework
+from test_framework.test_framework import quirkyturtTestFramework
 from test_framework.util import (
     assert_equal,
     assert_greater_than,
@@ -28,7 +28,7 @@ def getDelegatedUtxos(utxos):
     return [x for x in utxos if x["scriptPubKey"][:10] == '76a97b63d1' or x["scriptPubKey"][:10] == '76a97b63d2']
 
 
-class quirkturt_ColdStakingTest(quirkturtTestFramework):
+class quirkyturt_ColdStakingTest(quirkyturtTestFramework):
 
     def set_test_params(self):
         self.num_nodes = 3
@@ -49,7 +49,7 @@ class quirkturt_ColdStakingTest(quirkturtTestFramework):
         # Setup the p2p connections and start up the network thread.
         self.test_nodes = []
         for i in range(self.num_nodes):
-            self.test_nodes.append(quirkturtTestNode())
+            self.test_nodes.append(quirkyturtTestNode())
             self.test_nodes[i].peer_connect('127.0.0.1', p2p_port(i))
 
         network_thread_start()  # Start up network handling in another thread
@@ -482,4 +482,4 @@ class quirkturt_ColdStakingTest(quirkturtTestFramework):
 
 
 if __name__ == '__main__':
-    quirkturt_ColdStakingTest().main()
+    quirkyturt_ColdStakingTest().main()

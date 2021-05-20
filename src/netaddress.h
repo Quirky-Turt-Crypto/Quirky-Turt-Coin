@@ -1,13 +1,13 @@
 // Copyright (c) 2009-2021 The Bitcoin Core developers
-// Copyright (c) 2017-2021 The quirkturt Core developers
+// Copyright (c) 2017-2021 The quirkyturt Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_NETADDRESS_H
-#define quirkturt_NETADDRESS_H
+#ifndef quirkyturt_NETADDRESS_H
+#define quirkyturt_NETADDRESS_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/quirkturt-config.h"
+#include "config/quirkyturt-config.h"
 #endif
 
 #include "compat.h"
@@ -171,4 +171,4 @@ public:
     }
 };
 
-#endif // quirkturt_NETADDRESS_H
+#endif // quirkyturt_NETADDRESS_H

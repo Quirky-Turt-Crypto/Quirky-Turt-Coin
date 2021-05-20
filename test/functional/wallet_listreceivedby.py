@@ -5,7 +5,7 @@
 """Test the listreceivedbyaddress RPC."""
 from decimal import Decimal
 
-from test_framework.test_framework import quirkturtTestFramework
+from test_framework.test_framework import quirkyturtTestFramework
 from test_framework.util import (
     assert_array_result,
     assert_equal,
@@ -13,7 +13,7 @@ from test_framework.util import (
 )
 
 
-class ReceivedByTest(quirkturtTestFramework):
+class ReceivedByTest(quirkyturtTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
 

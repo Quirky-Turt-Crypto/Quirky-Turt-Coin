@@ -431,7 +431,7 @@ bool CBudgetManager::FillBlockPayee(CMutableTransaction& txCoinbase, CMutableTra
 
     CAmount blockValue = GetBlockValue(nHeight);
 
-    // Starting from quirkturt v6.0 masternode and budgets are paid in the coinbase tx of PoS blocks (block v10)
+    // Starting from quirkyturt v6.0 masternode and budgets are paid in the coinbase tx of PoS blocks (block v10)
     const bool fPayCoinstake = fProofOfStake &&
                                !Params().GetConsensus().NetworkUpgradeActive(nHeight, Consensus::UPGRADE_V6_0);
 

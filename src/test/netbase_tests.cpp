@@ -6,7 +6,7 @@
 
 #include "net.h"    // validateMasternodeIP
 #include "netbase.h"
-#include "test/test_quirkturt.h"
+#include "test/test_quirkyturt.h"
 
 #include <string>
 

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_TEST_TEST_quirkturt_H
-#define quirkturt_TEST_TEST_quirkturt_H
+#ifndef quirkyturt_TEST_TEST_quirkyturt_H
+#define quirkyturt_TEST_TEST_quirkyturt_H
 
 #include "fs.h"
 #include "scheduler.h"

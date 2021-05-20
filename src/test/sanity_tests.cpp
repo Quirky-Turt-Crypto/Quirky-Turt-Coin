@@ -4,7 +4,7 @@
 
 #include "compat/sanity.h"
 #include "key.h"
-#include "test_quirkturt.h"
+#include "test_quirkyturt.h"
 
 #include <boost/test/unit_test.hpp>
 

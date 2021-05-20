@@ -3,13 +3,13 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or https://www.opensource.org/licenses/mit-license.php .
 
-from test_framework.test_framework import quirkturtTestFramework
+from test_framework.test_framework import quirkyturtTestFramework
 from test_framework.util import (
     assert_equal,
 )
 from decimal import Decimal
 
-class SaplingSupplyTest(quirkturtTestFramework):
+class SaplingSupplyTest(quirkyturtTestFramework):
 
     def set_test_params(self):
         self.num_nodes = 1

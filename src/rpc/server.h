@@ -136,7 +136,7 @@ public:
 };
 
 /**
- * quirkturt RPC command dispatcher.
+ * quirkyturt RPC command dispatcher.
  */
 class CRPCTable
 {

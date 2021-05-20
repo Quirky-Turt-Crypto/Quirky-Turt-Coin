@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 //
-#ifndef quirkturt_ZQRTCMODULE_H
-#define quirkturt_ZQRTCMODULE_H
+#ifndef quirkyturt_ZQRTCMODULE_H
+#define quirkyturt_ZQRTCMODULE_H
 
 #include "libzerocoin/bignum.h"
 #include "libzerocoin/Denominations.h"
@@ -92,4 +92,4 @@ namespace ZQRTCModule {
 };
 
 
-#endif //quirkturt_ZQRTCMODULE_H
+#endif //quirkyturt_ZQRTCMODULE_H

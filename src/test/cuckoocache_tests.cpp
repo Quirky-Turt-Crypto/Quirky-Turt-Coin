@@ -4,7 +4,7 @@
 
 #include "cuckoocache.h"
 #include "script/sigcache.h"
-#include "test/test_quirkturt.h"
+#include "test/test_quirkyturt.h"
 #include "random.h"
 
 #include <thread>

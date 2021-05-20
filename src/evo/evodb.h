@@ -1,10 +1,10 @@
 // Copyright (c) 2018-2021 The Dash Core developers
-// Copyright (c) 2021 The quirkturt Core developers
+// Copyright (c) 2021 The quirkyturt Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_EVODB_H
-#define quirkturt_EVODB_H
+#ifndef quirkyturt_EVODB_H
+#define quirkyturt_EVODB_H
 
 #include "dbwrapper.h"
 #include "sync.h"
@@ -110,4 +110,4 @@ private:
 
 extern std::unique_ptr<CEvoDB> evoDb;
 
-#endif//quirkturt_EVODB_H
+#endif//quirkyturt_EVODB_H

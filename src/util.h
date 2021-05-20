@@ -13,7 +13,7 @@
 #define BITCOIN_UTIL_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/quirkturt-config.h"
+#include "config/quirkyturt-config.h"
 #endif
 
 #include "fs.h"
@@ -45,12 +45,12 @@ public:
     boost::signals2::signal<std::string (const char* psz)> Translate;
 };
 
-extern const char * const quirkturt_CONF_FILENAME;
-extern const char * const quirkturt_PID_FILENAME;
-extern const char * const quirkturt_MASTERNODE_CONF_FILENAME;
+extern const char * const quirkyturt_CONF_FILENAME;
+extern const char * const quirkyturt_PID_FILENAME;
+extern const char * const quirkyturt_MASTERNODE_CONF_FILENAME;
 extern const char * const DEFAULT_DEBUGLOGFILE;
 
-//quirkturt only features
+//quirkyturt only features
 
 extern std::atomic<bool> fMasterNode;
 extern bool fLiteMode;
@@ -263,7 +263,7 @@ void SetThreadPriority(int nPriority);
 template <typename Callable>
 void TraceThread(const char* name, Callable func)
 {
-    std::string s = strprintf("quirkturt-%s", name);
+    std::string s = strprintf("quirkyturt-%s", name);
     util::ThreadRename(s.c_str());
     try {
         LogPrintf("%s thread start\n", name);

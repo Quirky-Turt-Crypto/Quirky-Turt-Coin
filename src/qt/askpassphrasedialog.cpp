@@ -11,10 +11,10 @@
 #include "guiconstants.h"
 #include "guiutil.h"
 #include "walletmodel.h"
-#include "qt/quirkturt/qtutils.h"
-#include "qt/quirkturt/loadingdialog.h"
-#include "qt/quirkturt/defaultdialog.h"
-#include "qt/quirkturt/quirkturtgui.h"
+#include "qt/quirkyturt/qtutils.h"
+#include "qt/quirkyturt/loadingdialog.h"
+#include "qt/quirkyturt/defaultdialog.h"
+#include "qt/quirkyturt/quirkyturtgui.h"
 #include <QDebug>
 
 #include <QKeyEvent>
@@ -190,7 +190,7 @@ void AskPassphraseDialog::accept()
         );
         if (ret) {
             newpassCache = newpass1;
-            quirkturtGUI* window = static_cast<quirkturtGUI*>(parentWidget());
+            quirkyturtGUI* window = static_cast<quirkyturtGUI*>(parentWidget());
             LoadingDialog *dialog = new LoadingDialog(window);
             dialog->execute(this, 1);
             openDialogWithOpaqueBackgroundFullScreen(dialog, window);
@@ -310,7 +310,7 @@ bool AskPassphraseDialog::eventFilter(QObject* object, QEvent* event)
 
 bool AskPassphraseDialog::openStandardDialog(QString title, QString body, QString okBtn, QString cancelBtn)
 {
-    quirkturtGUI* gui = static_cast<quirkturtGUI*>(parentWidget());
+    quirkyturtGUI* gui = static_cast<quirkyturtGUI*>(parentWidget());
     DefaultDialog *confirmDialog = new DefaultDialog(gui);
     confirmDialog->setText(title, body, okBtn, cancelBtn);
     confirmDialog->adjustSize();
@@ -343,11 +343,11 @@ void AskPassphraseDialog::updateWarningsLabel()
 void AskPassphraseDialog::warningMessage()
 {
     hide();
-    static_cast<quirkturtGUI*>(parentWidget())->showHide(true);
+    static_cast<quirkyturtGUI*>(parentWidget())->showHide(true);
     openStandardDialog(
             tr("Wallet encrypted"),
             "<qt>" +
-            tr("quirkturt will close now to finish the encryption process. "
+            tr("quirkyturt will close now to finish the encryption process. "
                "Remember that encrypting your wallet cannot fully protect "
                "your QRTCs from being stolen by malware infecting your computer.") +
             "<br><br><b>" +

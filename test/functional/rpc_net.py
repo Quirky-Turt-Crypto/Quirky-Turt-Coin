@@ -7,7 +7,7 @@
 Tests correspond to code in rpc/net.cpp.
 """
 
-from test_framework.test_framework import quirkturtTestFramework
+from test_framework.test_framework import quirkyturtTestFramework
 from test_framework.util import (
     assert_equal,
     assert_greater_than_or_equal,
@@ -18,7 +18,7 @@ from test_framework.util import (
     wait_until,
 )
 
-class NetTest(quirkturtTestFramework):
+class NetTest(quirkyturtTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 2

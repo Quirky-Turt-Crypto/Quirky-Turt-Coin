@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_SCRIPTPUBKEYMAN_H
-#define quirkturt_SCRIPTPUBKEYMAN_H
+#ifndef quirkyturt_SCRIPTPUBKEYMAN_H
+#define quirkyturt_SCRIPTPUBKEYMAN_H
 
 #include "wallet/hdchain.h"
 #include "wallet/wallet.h"
@@ -160,4 +160,4 @@ private:
 };
 
 
-#endif //quirkturt_SCRIPTPUBKEYMAN_H
+#endif //quirkyturt_SCRIPTPUBKEYMAN_H

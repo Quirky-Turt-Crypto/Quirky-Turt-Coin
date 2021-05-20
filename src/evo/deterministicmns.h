@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_DETERMINISTICMNS_H
-#define quirkturt_DETERMINISTICMNS_H
+#ifndef quirkyturt_DETERMINISTICMNS_H
+#define quirkyturt_DETERMINISTICMNS_H
 
 #include "arith_uint256.h"
 #include "dbwrapper.h"
@@ -603,4 +603,4 @@ private:
 
 extern std::unique_ptr<CDeterministicMNManager> deterministicMNManager;
 
-#endif //quirkturt_DETERMINISTICMNS_H
+#endif //quirkyturt_DETERMINISTICMNS_H

@@ -6,7 +6,7 @@
 // Unit tests for block.CheckBlock()
 //
 
-#include "test/test_quirkturt.h"
+#include "test/test_quirkyturt.h"
 
 #include "clientversion.h"
 #include "fs.h"

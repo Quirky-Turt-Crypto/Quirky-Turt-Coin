@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_MONEYSUPPLY_H
-#define quirkturt_MONEYSUPPLY_H
+#ifndef quirkyturt_MONEYSUPPLY_H
+#define quirkyturt_MONEYSUPPLY_H
 
 #include "amount.h"
 #include "sync.h"
@@ -32,4 +32,4 @@ public:
     int64_t GetCacheHeight() const { LOCK(cs); return nHeight; }
 };
 
-#endif // quirkturt_MONEYSUPPLY_H
+#endif // quirkyturt_MONEYSUPPLY_H

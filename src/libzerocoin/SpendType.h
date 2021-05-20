@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_SPENDTYPE_H
-#define quirkturt_SPENDTYPE_H
+#ifndef quirkyturt_SPENDTYPE_H
+#define quirkyturt_SPENDTYPE_H
 
 #include <cstdint>
 
@@ -16,4 +16,4 @@ namespace libzerocoin {
     };
 }
 
-#endif //quirkturt_SPENDTYPE_H
+#endif //quirkyturt_SPENDTYPE_H

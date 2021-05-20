@@ -10,7 +10,7 @@
 #include "uint256.h"
 #include "util.h"
 #include "utilstrencodings.h"
-#include "test_quirkturt.h"
+#include "test_quirkyturt.h"
 
 #include <string>
 #include <vector>

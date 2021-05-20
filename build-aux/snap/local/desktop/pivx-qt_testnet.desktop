@@ -2,14 +2,14 @@
 
 [Desktop Entry]
 Encoding=UTF-8
-Name=quirkturt Core
-Comment=quirkturt Core QT test network
-GenericName=quirkturt Digital Currency QT client testnet network
-Exec=quirkturt-core.qt-testnet %u
+Name=quirkyturt Core
+Comment=quirkyturt Core QT test network
+GenericName=quirkyturt Digital Currency QT client testnet network
+Exec=quirkyturt-core.qt-testnet %u
 Terminal=false
 Type=Application
-Icon=${SNAP}/share/pixmaps/quirkturt_testnet.png
+Icon=${SNAP}/share/pixmaps/quirkyturt_testnet.png
 MimeType=x-scheme-handler/qrtc;
 Categories=X-Office;X-Finance;
-Keywords=internet;quirkturt;zqrtc;tqrtc;core;wallet;qt;testnet;snap;launchpad;crypto;digital;currency;coin;token;zerocoin;
+Keywords=internet;quirkyturt;zqrtc;tqrtc;core;wallet;qt;testnet;snap;launchpad;crypto;digital;currency;coin;token;zerocoin;
 Version=1.0

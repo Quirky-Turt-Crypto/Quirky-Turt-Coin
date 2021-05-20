@@ -1,5 +1,5 @@
 // Copyright (c) 2017 The Dash Core developers
-// Copyright (c) 2020 The quirkturt Core developers
+// Copyright (c) 2020 The quirkyturt Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 

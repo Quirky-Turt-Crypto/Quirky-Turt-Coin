@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
-from test_framework.test_framework import quirkturtTestFramework
+from test_framework.test_framework import quirkyturtTestFramework
 from test_framework.util import *
 
 """
 Simple test checking chain movement after v5 enforcement.
 """
 
-class MiningV5UpgradeTest(quirkturtTestFramework):
+class MiningV5UpgradeTest(quirkyturtTestFramework):
 
     def set_test_params(self):
         self.num_nodes = 1

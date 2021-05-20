@@ -67,7 +67,7 @@ extern double NSAppKitVersionNumber;
 #endif
 #endif
 
-#define URI_SCHEME "quirkturt"
+#define URI_SCHEME "quirkyturt"
 
 #if defined(Q_OS_MAC)
 #pragma GCC diagnostic push
@@ -138,7 +138,7 @@ void setupAddressWidget(QValidatedLineEdit* widget, QWidget* parent)
     widget->setFont(bitcoinAddressFont());
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter quirkturt address (e.g. %1)").arg("D7VFR83SQbiezrW72hjcWJtcfip5krte2Z"));
+    widget->setPlaceholderText(QObject::tr("Enter quirkyturt address (e.g. %1)").arg("D7VFR83SQbiezrW72hjcWJtcfip5krte2Z"));
     widget->setValidator(new BitcoinAddressEntryValidator(parent));
     widget->setCheckValidator(new BitcoinAddressCheckValidator(parent));
 }
@@ -160,7 +160,7 @@ void updateWidgetTextAndCursorPosition(QLineEdit* widget, const QString& str)
 
 bool parseBitcoinURI(const QUrl& uri, SendCoinsRecipient* out)
 {
-    // return if URI is not valid or is no quirkturt: URI
+    // return if URI is not valid or is no quirkyturt: URI
     if (!uri.isValid() || uri.scheme() != QString(URI_SCHEME))
         return false;
 
@@ -209,9 +209,9 @@ bool parseBitcoinURI(const QUrl& uri, SendCoinsRecipient* out)
 
 bool parseBitcoinURI(QString uri, SendCoinsRecipient* out)
 {
-    // Convert quirkturt:// to quirkturt:
+    // Convert quirkyturt:// to quirkyturt:
     //
-    //    Cannot handle this later, because quirkturt:// will cause Qt to see the part after // as host,
+    //    Cannot handle this later, because quirkyturt:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
     if (uri.startsWith(URI_SCHEME "://", Qt::CaseInsensitive)) {
         uri.replace(0, std::strlen(URI_SCHEME) + 3, URI_SCHEME ":");
@@ -422,7 +422,7 @@ bool openDebugLogfile()
 
 bool openConfigfile()
 {
-    return openFile(GetConfigFile(gArgs.GetArg("-conf", quirkturt_CONF_FILENAME)), true);
+    return openFile(GetConfigFile(gArgs.GetArg("-conf", quirkyturt_CONF_FILENAME)), true);
 }
 
 bool openMNConfigfile()
@@ -632,16 +632,16 @@ fs::path static StartupShortcutPath()
 {
     std::string chain = gArgs.GetChainName();
     if (chain == CBaseChainParams::TESTNET)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "quirkturt (testnet).lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "quirkyturt (testnet).lnk";
     else if (chain == CBaseChainParams::REGTEST)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "quirkturt (regtest).lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "quirkyturt (regtest).lnk";
 
-    return GetSpecialFolderPath(CSIDL_STARTUP) / "quirkturt.lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / "quirkyturt.lnk";
 }
 
 bool GetStartOnSystemStartup()
 {
-    // check for quirkturt*.lnk
+    // check for quirkyturt*.lnk
     return fs::exists(StartupShortcutPath());
 }
 
@@ -712,7 +712,7 @@ fs::path static GetAutostartDir()
 
 fs::path static GetAutostartFilePath()
 {
-    return GetAutostartDir() / "quirkturt.desktop";
+    return GetAutostartDir() / "quirkyturt.desktop";
 }
 
 bool GetStartOnSystemStartup()
@@ -749,15 +749,15 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         fs::ofstream optionFile(GetAutostartFilePath(), std::ios_base::out | std::ios_base::trunc);
         if (!optionFile.good())
             return false;
-        // Write a quirkturt.desktop file to the autostart directory:
+        // Write a quirkyturt.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (gArgs.GetBoolArg("-testnet", false))
-            optionFile << "Name=quirkturt (testnet)\n";
+            optionFile << "Name=quirkyturt (testnet)\n";
         else if (gArgs.GetBoolArg("-regtest", false))
-            optionFile << "Name=quirkturt (regtest)\n";
+            optionFile << "Name=quirkyturt (regtest)\n";
         else
-            optionFile << "Name=quirkturt\n";
+            optionFile << "Name=quirkyturt\n";
         optionFile << "Exec=" << pszExePath << strprintf(" -min -testnet=%d -regtest=%d\n", gArgs.GetBoolArg("-testnet", false), gArgs.GetBoolArg("-regtest", false));
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -778,7 +778,7 @@ LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef
         return nullptr;
     }
 
-    // loop through the list of startup items and try to find the quirkturt app
+    // loop through the list of startup items and try to find the quirkyturt app
     for (int i = 0; i < CFArrayGetCount(listSnapshot); i++) {
         LSSharedFileListItemRef item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(listSnapshot, i);
         UInt32 resolutionFlags = kLSSharedFileListNoUserInteraction | kLSSharedFileListDoNotMountVolumes;
@@ -835,7 +835,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
     LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, bitcoinAppUrl);
 
     if (fAutoStart && !foundItem) {
-        // add quirkturt app to startup item list
+        // add quirkyturt app to startup item list
         LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, nullptr, nullptr, bitcoinAppUrl, nullptr, nullptr);
     } else if (!fAutoStart && foundItem) {
         // remove item

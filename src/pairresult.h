@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_PAIRRESULT_H
-#define quirkturt_PAIRRESULT_H
+#ifndef quirkyturt_PAIRRESULT_H
+#define quirkyturt_PAIRRESULT_H
 
 
 class PairResult {
@@ -17,4 +17,4 @@ public:
 };
 
 
-#endif //quirkturt_PAIRRESULT_H
+#endif //quirkyturt_PAIRRESULT_H

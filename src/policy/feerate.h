@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_POLICY_FEERATE_H
-#define quirkturt_POLICY_FEERATE_H
+#ifndef quirkyturt_POLICY_FEERATE_H
+#define quirkyturt_POLICY_FEERATE_H
 
 #include "amount.h"
 #include "serialize.h"
@@ -45,4 +45,4 @@ public:
     }
 };
 
-#endif //  quirkturt_POLICY_FEERATE_H
+#endif //  quirkyturt_POLICY_FEERATE_H

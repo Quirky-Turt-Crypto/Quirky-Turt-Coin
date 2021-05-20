@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef quirkturt_ZIP32_H
-#define quirkturt_ZIP32_H
+#ifndef quirkyturt_ZIP32_H
+#define quirkyturt_ZIP32_H
 
 #include "uint256.h"
 #include "key.h"
@@ -145,4 +145,4 @@ bool IsValidSpendingKey(const libzcash::SpendingKey& zkey);
 /** Check whether a ViewingKey is not an InvalidEncoding. */
 bool IsValidViewingKey(const libzcash::ViewingKey& vk);
 
-#endif // quirkturt_ZIP32_H
+#endif // quirkyturt_ZIP32_H
